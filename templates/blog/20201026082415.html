@@ -1,28 +1,28 @@
-<h2>Perlの文字列リテラルはUnix/Linuxシェルのシングルクォートとダブルクォートと似たように機能する</h2>
+<h2> Perl string literals work like single and double quotes in Unix / Linux shells </ h2>
 
-Perlがシェルフレンドリーなひとつの理由として、Perlの文字列リテラルは<a href="https://en.linux.perlzemi.com/">Unix/Linuxシェル</a>のシングルクォートとダブルクォートと似たように機能することがあげられます。
+One reason Perl is shell-friendly is that Perl string literals are similar to <a href="https://en.linux.perlzemi.com/"> Unix / Linux shell </a> single and double quotes. It works like this.
 
-<h3>シングルクォート文字列</h3>
+<h3> Single quote string </ h3>
 
-Perlのシングルクォート文字列は、変数展開を行いません。この動作は、Unix/Linuxシェルと同じです。
-
-<pre>
-# 変数展開しない(hello $name)
-my $message = 'hello $name';
-</pre>
-
-<h3>ダブルクォート文字列</h3>
-
-Perlのダブルクォート文字列は、変数展開を行います。この動作は、Unix/Linuxシェルと同じです。
+Perl single quoted strings do not interpolate variables. This behavior is the same as the Unix / Linux shell.
 
 <pre>
-# 変数展開する(hello kimoto)
-my $name = 'kimoto';
-my $hessage = "hello $name";
-</pre>
+#Do not expand variables (hello $ name)
+my $ message ='hello $ name';
+</ pre>
 
-シェルのシングルクォートとダブルクォートと似たように動作するので、覚えておきやすいですね。
+<h3> Double quote string </ h3>
 
-<h3>Perlとシェルの文字列リテラルの違いは?</h3>
+Perl double quoted strings do variable expansion. This behavior is the same as the Unix / Linux shell.
 
-Perlとbashとの違いはあります。それはバックスラッシュ「\」が、エスケープシーケンスとして解釈されることです。Perlの場合は、どのUnix/Linux環境であってもダブルクォートの中の「\n」で改行を表現できます。エスケープシーケンスについてはC言語との類似性をPerlの開発者は選んだようです。
+<pre>
+#Explode variables (hello kimoto)
+my $ name ='kimoto';
+my $ hessage = "hello $ name";
+</ pre>
+
+It works like shell single and double quotes, so it's easy to remember.
+
+<h3> What is the difference between Perl and shell string literals? </ H3>
+
+There are differences between Perl and bash. That is, the backslash "\" is interpreted as an escape sequence. In Perl, you can use "\ n" in double quotes to represent a line break in any Unix / Linux environment. It seems that Perl developers chose the similarity with C language for escape sequences.

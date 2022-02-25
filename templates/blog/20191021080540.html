@@ -1,88 +1,88 @@
-<h2>Perlのプレインオールドを再評価する - 単純で古典的ということの価値</h2>
+<h2> Reassess Perl's Plain Old-The Value of Simple and Classic </ h2>
 
-Perlは、1987年に誕生したプログラミング言語です。起源は古く、現代的な動的型言語の元祖です。言語の仕組みは単純なものを採用しています。
+Perl is a programming language that was born in 1987. It has an old and modern origin in dynamically typed languages. The language mechanism is simple.
 
-Perlは、時流と流行と人気に乗り、新しいことを常に取り入れるといったようなプログラミング言語ではありません。
+Perl is not a programming language that keeps up with the times, trends and popularity, and keeps up with new things.
 
-古典的で簡単な解決方法で解決できるものは、それを使い、新しい分野で必要があれば、時間をかけて取り入れていきます。
+What can be solved with a classic and simple solution will be used, and if necessary in a new field, it will be incorporated over time.
 
-Perlは、日常の作業でよく使うテキスト処理に着目し、ユーザーが簡単に使えることが特徴です。
+Perl focuses on text processing that is often used in daily work, and is characterized by being easy for users to use.
 
-後方互換性は非常に高く、安定してシステムを運用することができます。
+The backward compatibility is very high, and the system can be operated stably.
 
-以下では、Perlにおける単純な仕組みについて、いくつか例を挙げてみます。
+Below are some examples of how simple it works in Perl.
 
-<h3>リファレンスカウント式のGC</h3>
+<h3> Reference counting GC </ h3>
 
-Perlは、古典的で簡単なリファレンスカウント式のGCを採用しています。
+Perl uses a classic and simple reference-counted GC.
 
-<a href="https://perlzemi.com/blog/20131010138141.html">Perlのガーベッジコレクション(GC)の特性について - リファレンスカウントGC</a>
+<a href="https://perlzemi.com/blog/20131010138141.html"> Characteristics of Perl's Garbage Collection (GC) --Reference Count GC </a>
 
-リファレンスカウント式のGCの強みは、GCの中では、実装が最もシンプルなことです。リファレンスカウントが0になったオブジェクトを解放するという実装です。
-プログラミング言語の内部的な実装において、実装内容は一貫しており、Perlのバージョンによって、変化するということは、ほぼありません。
+The strength of reference counting GC is that it is the simplest to implement in GC. It is an implementation that releases the object whose reference count is 0.
+In the internal implementation of a programming language, the implementation is consistent and rarely changes with Perl versions.
 
-ユーザーから見た嬉しい点は何でしょう。それは、レイテンシを小さくできることです。
+What are the good points from the user's point of view? That is the ability to reduce latency.
 
-リファレンスカウント方式GCでは、オブジェクトが破棄されるたびに、GCを行うので、GCの蓄積が起こりません。
+In the reference counting method GC, GC is performed every time an object is destroyed, so GC does not accumulate.
 
-高パフォーマンスのために必要な、Webサーバーの実装であるノンブロッキングI/Oでは、待ち時間が小さいということは非常に重要です。
+Low latency is very important for non-blocking I / O, which is a web server implementation required for high performance.
 
-Perlは、大量のテキストを扱うことにパフォーマンスを最適化しており、これは、大量のオブジェクトの生成と破棄が起こるということも想定されています。
+Perl optimizes performance for handling large amounts of text, which is also expected to result in the creation and destruction of large amounts of objects.
 
-リファレンスカウントGCのデメリットは、率直にいうと、スループットが世代別GCに比べて低いことと、長くオブジェクトが存在することが想定されるプログラムにおいて、循環参照が起こったときは、弱参照の機能を使って、自分で管理する必要があることです。
+The disadvantages of reference counting GC are, frankly, that the throughput is lower than that of generational GC, and in a program where objects are expected to exist for a long time, when a circular reference occurs, the weak reference function is used. It's something you have to use and manage yourself.
 
-Perl以後の時代は、リファレンスカウントGCを古くて悪い実装と、かつてみなしましたが、Webサーバーの実装であるノンブロッキングI/Oにおいては、待ち時間が小さいことが、パフォーマンスにとって、重要なことが明らかになったため、リファレンスカウントGCの再評価が行われています。
+In the post-Perl era, reference counting GC was once regarded as an old and bad implementation, but it is clear that low latency is important for performance in non-blocking I / O, which is a Web server implementation. Therefore, the reference count GC is being re-evaluated.
 
-<h3>シングルスレッド</h3>
+<h3> Single thread </ h3>
 
-Perlプログラムは、シングルスレッドを前提として、動くことが想定されています。かつてPerlは、スレッドの方向を目指しましたが、現在ではPerlの持つスレッド機能は、非推奨となっています。
+Perl programs are supposed to work on the assumption that they are single-threaded. Perl used to aim for threads, but now Perl's threading capabilities are deprecated.
 
-理由は、Perlコア自体は、スレッドをサポートできることが可能であったとしても、CPANモジュールなど第三者が作ったモジュールは、スレッドを想定していないためです。
+The reason is that even though the Perl core itself can support threads, third-party modules such as the CPAN module do not assume threads.
 
-そのため、Perlは安全なスレッドを目指しましたが、そのスレッドは、非常に重く、スレッドとして求められる水準に達しなかったのです。
+That's why Perl sought to be a safe thread, but it was so heavy that it didn't reach the level required for a thread.
 
-ですから、LinuxサーバーでコンパイルされるPerlは、標準で、スレッドサポートを外して、10%程度、パフォーマンスを上げる方向を選びました。
+Therefore, Perl compiled on a Linux server, by default, chose to remove thread support and improve performance by about 10%.
 
-実は、スレッドは、存在することが自体が、パフォーマンスを下げる要因となります。
+In fact, the existence of threads is a factor that reduces performance in itself.
 
-Perlは、スレッドの利便性と複雑性を選択しないで、単純さとパフォーマンスを上げる方向を選択しました。これがPerl言語のひとつの個性ともなっています。
+Perl chose to improve simplicity and performance, rather than choosing thread convenience and complexity. This is one of the personalities of the Perl language.
 
-誤解を招くといけないので、追記しておきますが、スレッドがないということはマルチCPUをフルに使えないとういことは意味していません。
+In case of misunderstanding, I'll add it, but the lack of threads does not mean that the multiCPU cannot be fully used.
 
-それについては、こちらの記事をどうぞ。
+Read this article about it.
 
-<a href="/blog/20190918081634.html">PerlでもマルチCPUを最大限に活用できる</a>
+<a href="/blog/20190918081634.html"> You can make the most of multiCPU even in Perl </a>
 
-<h3>Perlは複雑と聞いていますが、実際はそうではないのですか?</h3>
+<h3> I've heard that Perl is complicated, but isn't it really? </ H3>
 
-ここまで読むと「世の中では、Perlは複雑と言われているけれど、実際はそうではないのか」という疑問を抱かれることでしょう。
+If you read this far, you may be wondering, "Perl is said to be complicated in the world, but isn't it?"
 
-半分本当、半分間違いですね。
+It's half true, half wrong.
 
-Perlの複雑と思える原因のひとつは、言語側ではなくって、シンタックシュシュガーにあります。
+One of the seemingly complex causes of Perl is not the language side, but the syntactic sugar.
 
-シンタックシュガーとは、何回も書くのが面倒なので、簡単に書ける記法を用意しましょうというものです。また、意味を間違えやすいので、わかりやすい記法を導入しましょうというものです。
+Sintuck sugar is a hassle to write many times, so let's prepare a notation that can be written easily. Also, since it is easy to make a mistake in the meaning, let's introduce an easy-to-understand notation.
 
-たとえば、Perlでは、以下の意味は、同じなのですが、二つの表現が存在します。
+For example, in Perl, the following meanings are the same, but there are two expressions.
 
 <pre>
-my %person = ('name', 'yuki', 'age', 19);
+my% person = ('name','yuki','age', 19);
 
-my %person = (name => 'yuki', age => 19);
-</pre>
+my% person = (name =>'yuki', age => 19);
+</ pre>
 
-Perlは、コンピューターから見た意味が同じなのに、人間から見たときに、見た目が違うという、シンタックシュガーが存在するのです。
+Perl has a syntack sugar that looks the same when viewed from a computer, but looks different when viewed from a human.
 
-このために、表面的に、複雑なような印象を受けます。
+This gives the impression of being complicated on the surface.
 
-ただし、シンタックシュシュガーは、近年見直されてきており、Perl以外の言語にも、取り入れられることが多くなってきています。
+However, Syntack Sugar has been reviewed in recent years and is becoming more and more popular in languages ​​other than Perl.
 
-たとえばkotlinという言語は、Javaとの互換性を確保しつつ、Java言語にシンタックシュガーを取り入れたような言語として設計されていますね。
+For example, the language kotlin is designed as a language that incorporates syntax sugar into the Java language while ensuring compatibility with Java.
 
-Perl風のシンタックシュガーの採用も多くみられます。
+There are also many adoptions of Perl-like syntax sugar.
 
-ただし、書き方が複数あることは、良い書き方が選ばれなかった場合、保守性を低くするということもまた真実であります。
+However, it is also true that having multiple writing styles makes maintainability less if a good writing style is not chosen.
 
-ですので、開発を始める前には、長い間の知識の蓄積から、ベストプラクティスと呼ばれるものが、存在するので、一度目を通しておくとよいと思います。
+Therefore, before starting development, there is something called best practice from the accumulation of knowledge for a long time, so I think it is good to read it once.
 
-<a href="https://perlzemi.com/blog/20091120124667.html">現代的なPerlの記述方法一覧</a>
+<a href="https://perlzemi.com/blog/20091120124667.html"> A list of modern Perl writing methods </a>

@@ -1,45 +1,45 @@
-<h2>PerlのgrepはUnix/Linuxコマンドのgrepから着想を得ている</h2>
+<h2> Perl's grep is inspired by the Unix / Linux command grep </ h2>
 
-Perlにはgrepと呼ばれる関数がありますが、これは、PerlのgrepはUnix/Linuxコマンドのgrepから着想を得ています。
+Perl has a function called grep, which is inspired by Perl's grep from the Unix / Linux command grep.
 
-<h4>Unix/Linuxコマンドのgrep</h4>
+<h4> Unix / Linux command grep </ h4>
 
-Unix/Linuxコマンドのgrepの基本的な機能は、ファイルの中にある文字列を検索して、該当する行があれば、それを取り出して表示するというものです。
-
-<pre>
-grep ケーキ food.txt
-</pre>
-
-footd.txtの中に、ケーキが含まれる行があれば、それが、表示されます。
-
-<h4>Perlのgrep関数</h4>
-
-Perlのgrep関数は、Unix/Linuxコマンドのgrepから着想を得ています。
-
-Perlのgrep関数の機能は、配列の要素で、条件に該当する要素があれば、それだけ取り出すというものです。
-
-grepコマンドの対象が、ファイルの各行であるのに対して、Perlのgrep関数は、配列の各要素となっています。
-
-grep関数のサンプルを書いてみます。偶数だけを取り出すサンプルです。
+The basic function of grep in Unix / Linux commands is to search for a string in a file and retrieve and display the corresponding line, if any.
 
 <pre>
-# grep関数で偶数のみ取り出す
+grep cake food.txt
+</ pre>
+
+If there is a line in footd.txt that contains the cake, it will be displayed.
+
+<h4> Perl's grep function </ h4>
+
+Perl's grep function is inspired by the Unix / Linux command grep.
+
+The function of Perl's grep function is to retrieve all the elements of an array that meet the conditions.
+
+Whereas the grep command targets each line in the file, Perl's grep function is an element of the array.
+
+Let's write a sample of the grep function. This is a sample to extract only even numbers.
+
+<pre>
+# Extract only even numbers with grep function
 my @nums = (1, 2, 3, 4);
-my @even_nums = grep { $_ % 2 == 0 } @nums;
-</pre>
+my @even_nums = grep {$ _% 2 == 0} @nums;
+</ pre>
 
-配列の各要素は、デフォルト変数「$_」に入ってきます。そして、偶数という条件にマッチしたものだけが、取り出された新しい配列が返されます。
+Each element of the array comes in the default variable "$ _". And only those that match the even condition will return the new fetched array.
 
-Perlのgrep関数は、Unix/Linuxのgrepコマンドと、とても近い感覚で利用できます。
+Perl's grep function is very similar to Unix / Linux's grep command.
 
-<h3>Perlの正規表現をgrepコマンドでも使える</h3>
+<h3> Perl regular expressions can also be used with the grep command </ h3>
 
-Perlの正規表現は、よくある問題を簡単に解決できる機能を実装した、実用的な正規表現です。
+Perl regular expressions are practical regular expressions that implement features that make it easy to solve common problems.
 
-実験的ではありますが、最近のLinuxでは「-P」オプションを使うと、Perlの正規表現をgrepコマンドでも使うことができます。
+Although experimental, in modern Linux you can also use Perl regular expressions with the grep command using the "-P" option.
 
 <pre>
-grep -P '(\.txt|\.html)$' food.txt
-</pre>
+grep -P'(\ .txt | \ .html) $'food.txt
+</ pre>
 
-Perlで活用され、広く利用されるようになった、Perlの正規表現をgrepコマンド側でも使うことができます。
+Perl's regular expressions, which have become popular and widely used in Perl, can also be used on the grep command side.

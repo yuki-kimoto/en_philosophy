@@ -1,42 +1,42 @@
-<h2>Perlはどんな風に書いても動きますか?</h2>
+<h2> How does Perl work? </ H2>
 
-Perlはどんな風に書いても動きますかという質問に答えましょう。
+Answer the question, how does Perl work?
 
-<h3>Perlは構文木にコンパイルされる言語</h3>
+<h3> Perl is a language compiled into a syntax tree </ h3>
 
-Perlのソースコードは、構文木にコンパイルされます。1行実行のインタープリタではないです。
+Perl source code is compiled into a syntax tree. It's not a one-line execution interpreter.
 
-Perlとしての文法が間違っていれば、実行前に、コンパイルエラーとなります。
+If the syntax as Perl is wrong, you will get a compile error before execution.
 
-実際にPerlの「-c」オプションを使うと、コンパイルまでの段階だけを実行できることが確認できます。
+In fact, if you use Perl's "-c" option, you can see that you can only perform the steps up to compilation.
 
 <pre>
 perl -c script.pl
-</pre>
+</ pre>
 
-ですので、どんな風に書いても動きますかという質問の答えは、ノーです。
+So the answer to the question of how it works no matter how you write it is no.
 
-<h3>どんな風に書いても動くというのは、Perlは、文法エラーを見逃しやすいという意味です</h3>
+<h3> The fact that it works no matter how you write it means that Perl makes it easy to miss syntax errors. </ H3>
 
-どんな風に書いても動くというのは、Perlは、文法エラーを見逃しやすいという意味です。
+The fact that it works no matter how you write it means that Perl makes it easy to miss syntax errors.
 
-もし質問がこのような意味であれば、イエスでも、ノーでもあります。
+If the question means this, it is yes or no.
 
-ノーと答えられる場合は、以下の二行が、ソースコードの先頭に書かれている場合です。
+If you can answer no, the following two lines are at the beginning of the source code.
 
 <pre>
 use strict;
 use warnings;
-</pre>
+</ pre>
 
-Perlの良い慣習として、ソースコードを書く場合は(ワンライナーを書く場合を除いて)この二行を書きます。
+It's a good Perl practice to write these two lines when writing source code (unless you're writing a one-liner).
 
-strictは、文法を厳格にし、warningsは、見逃しやすい警告を表示してくれます。
+strict tightens the grammar, and warnings display warnings that are easy to miss.
 
-Perlのコアチームは、Perlのバージョンが5に上がる前の段階で、Perlでは、ユーザーがミスをたくさんしてしまうという問題に気が付いていました。
+Before the Perl version went up to 5, Perl's core team was aware of the problem that users make a lot of mistakes in Perl.
 
-そのために、Perl 5には、strictとwarningsという仕組みが導入されました。
+That's why Perl 5 introduced a mechanism called strict and warnings.
 
-これは、実際に成功しており、変数宣言の忘れや、未定義値を、使うべきではない場所で使ってしまうという間違いを、簡単に見つけられます。
+It's actually successful, and it's easy to spot the mistake of forgetting to declare a variable or using an undefined value where it shouldn't.
 
-Perl 4のころのPerlは、文法エラーを見逃しやすいというのは本当ですが、Perl 5で、strictとwarningsが有効にすれば、文法エラーを簡単に発見できます。
+It's true that Perl around Perl 4 makes it easy to miss syntax errors, but in Perl 5, if you enable strict and warnings, you can easily spot syntax errors.

@@ -1,19 +1,19 @@
-<h2>Perlの起動速度はピカイチ</h2>
+<h2> Perl startup speed is perfect </ h2>
 
-プログラミング言語の中でも、Perlの起動速度は、ピカイチ。ソースコードの量が増えてきても、修正した後、プログラムを実行するときの起動は一瞬です。
+Among the programming languages, Perl has the fastest startup speed. Even if the amount of source code increases, after fixing it, the startup when executing the program is instantaneous.
 
-<h3>Perlの起動速度が速い理由</h3>
+<h3> Why Perl starts up so fast </ h3>
 
-Perlの起動速度が速い理由は、抽象構文木を生成した後、抽象構文木のまま、ある程度の最適化が行われ、実行されるからです。
+The reason Perl starts up so fast is that after the abstract syntax tree is generated, the abstract syntax tree remains as it is, with some optimization and execution.
 
-他の言語では、たとえば、抽象構文木を作った後、さらに、バイトコードに変換されます。この処理は、実際には、気になるほどに、遅くはありませんが、Perlと比較すると、解析量が多くなっています。
+In other languages, for example, after creating an abstract syntax tree, it is further converted to bytecode. This process isn't really slow enough to be annoying, but it's a lot more parsed than Perl.
 
-また、静的言語のように、実行速度を徹底的に最適化するためには、さらなる解析が必要になります。
+Also, like static languages, further analysis is needed to thoroughly optimize execution speed.
 
-Perlは、コード量が増えてきても、ソースコードの修正とプログラムの起動の繰り返しを気持ちよく行えます。
+Perl makes it easy to modify the source code and start the program repeatedly even if the amount of code increases.
 
-<h3>実行速度に影響がでるのではありませんか?</h3>
+<h3> Doesn't it affect the execution speed? </ H3>
 
-はい、実行速度に影響がでます。特に、バイトコードに変換される場合と比べて、スループットは、低下します。Perlは、スループットを最大限に必要とする処理には、向いていません。ただし、サーバーによる分散化や、マルチプロセスなど、スケーリングする方法があるため、実務では、それほど問題にはなりません。
+Yes, it will affect the execution speed. In particular, the throughput will be lower than when converted to bytecode. Perl is not suitable for processing that requires maximum throughput. However, it doesn't really matter in practice because there are scaling methods such as server decentralization and multi-process.
 
-一方で、テキスト処理や、Webアプリケーションのパフォーマンスは、良いです。繰り返し大量に文字列が処理される場面を想定して、Perlが最適化されているためです。
+On the other hand, text processing and web application performance are good. This is because Perl has been optimized for situations where a large number of strings are repeatedly processed.

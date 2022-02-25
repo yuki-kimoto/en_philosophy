@@ -1,105 +1,105 @@
-<h2>Perlの多様性と規律という考え方はなぜ人の心に優しいのか</h2>
+<h2> Why is Perl's idea of ​​diversity and discipline kind to people? </ H2>
 
-Perlは多様性と規律という考え方があります。なぜこの考え方は人の心に優しいのでしょうか?
+Perl has the idea of ​​diversity and discipline. Why is this idea kind to people's hearts?
 
-<h3>Perlの多様性の意味</h3>
+<h3> The meaning of Perl's diversity </ h3>
 
-Perlの多様性の意味について、いくつか例を書きます。
+Here are some examples of what Perl's diversity means.
 
-<h4>人間の多様性に配慮する</h4>
+<h4> Consider human diversity </ h4>
 
-Perlのプログラミングの前提は、人には多様性があるということです。人が書いた文章は、コンピュータが生成したもののように、画一的ではありません。それぞの人に、癖があり、その癖は多様なので、Perlプログラムの方が、それを配慮します。
+The premise of Perl programming is that people are diverse. Human-written texts are not as uniform as computer-generated ones. Each person has a habit, and that habit is diverse, so the Perl program takes that into account.
 
-たとえば、数字の1を書く場合、半角の「1」を書く人と、全角の「１」を書く人がいたとしましょう。
+For example, when writing the number 1, let's say that there are people who write half-width "1" and people who write full-width "1".
 
-これは、人の癖を考えた場合に、頻繁に起こることですが、コンピュータは画一的に扱いたいと思います。
+This happens frequently when considering human habits, but I would like to treat computers uniformly.
 
-Perlは、人間の側を配慮して、このような書き方に対して、すぐに対処して、コンピュータで扱いやすい形に変換できます。
-
-<pre>
-# 全角の１を半角の1に変換する
-$str =~ s/１/1/;
-</pre>
-
-<h4>文法の多様性でよくあるパターンに対処する</h4>
-
-次は、Perlの文法の多様性でよくあるパターンに対処するという例を紹介します。
-
-改行区切りのを文字列コピペで扱いたいという場合です。
-
-システム開発を行っていると、改行区切りの文字列というのは、頻繁に登場します。一つの例としては、Excelの縦の列として、入力されている場合です。
+Perl is human-friendly and can quickly address these writings and convert them into computer-friendly forms.
 
 <pre>
-# 改行区切りの文字列
+# Convert full-width 1 to half-width 1
+$ str = ~ s / 1/1 /;
+</ pre>
+
+<h4> Deal with common patterns in grammatical diversity </ h4>
+
+The following is an example of dealing with a common pattern in Perl's grammatical variety.
+
+You want to handle line breaks with string copy and paste.
+
+When developing a system, line break delimited strings appear frequently. One example is when it is entered as a vertical column in Excel.
+
+<pre>
+# Line break delimited string
 foo
-bar
+bar bar
 baz
-</pre>
+</ pre>
 
-実務では、これをすぐにプログラム上で、配列にしたいのです。
+In practice, I want this to be an array programmatically right away.
 
-Perlには、二つの方法があります。文字列リスト演算子かDATAセクションを使う方法です。
+There are two ways in Perl. You can use the string list operator or the DATA section.
 
 <pre>
-# 文字列リストで配列にする
-my $strs = qw(
+# Make an array with a string list
+my $ strs = qw (
 foo
-bar
+bar bar
 baz
 );
 
-# DATAセクションを使ってファイル入出力のように扱う
-while (my $line = <DATA>) {
-  chomp $line;
+Treat like file I / O with #DATA section
+while (my $ line = <DATA>) {
+  chomp $ line;
   
-  # 処理
+  # process
 }
 
 __DATA__
 foo
-bar
+bar bar
 baz
-</pre>
+</ pre>
 
-Perlには、画一性を好んで、一つの配列の構文が用意されているというわけではなく「改行区切りのを文字列コピペで扱いたい」という要望に対して、文字列リスト演算子とDATAセクションが用意されています。
+Perl does not have a single array syntax for uniformity, but in response to the desire to "handle line breaks with string copy and paste", the string list operator and DATA Sections are available.
 
-これは、Perlの文法の多様性の一例ですが、この多様性には、価値や意味があります。
+This is an example of Perl's grammatical variety, which has value and meaning.
 
-<h3>開発者やチームに規律が必要</h3>
+<h3> Developers and teams need discipline </ h3>
 
-Perlには、人の多様性に適応するために、文法の多様性があるので、ある程度開発者やチームに規律が必要です。
+Perl has a variety of grammars to adapt to human diversity, so some discipline is needed for developers and teams.
 
-これは、コーディング規約のような固いものでなくてもよいですが、他の開発者、デザイナー、インフラエンジニアにとって、読みやすいように、配慮されている必要があります。
+It doesn't have to be as rigid as a coding convention, but it should be designed to be readable by other developers, designers, and infrastructure engineers.
 
-Perlが、あなたの書きやすいように配慮してくれるように、あなたは、他の開発者、デザイナー、インフラエンジニアに配慮する必要があります。また、開発者が変わった場合の未来のエンジニアに対して、このコードは、その人にとって、管理しやすいだろうかということを、考える必要があります。
+You need to be considerate of other developers, designers, and infrastructure engineers so that Perl takes care of your writing. You also need to wonder if this code will be easier for future engineers to manage if the developer changes.
 
-<h3>多様性という価値を、画一性という価値と対比する価値がある</h3>
+<h3> It is worth comparing the value of diversity with the value of uniformity </ h3>
 
-Perlには、人間を画一的に扱うという考え方が、存在していません。
+Perl doesn't have the idea of ​​treating humans uniformly.
 
-多くの人が誤解していますが、この一つの方法を適用したり、この一つのやり方をさせれば、システム開発がうまくいくということは、まずありません。
+As many people misunderstand, it is unlikely that system development will be successful if this one method is applied or if this one method is used.
 
-開発者がわがままなので、組織のプロダクトマネージャーとしては、この人を、取り換え可能な、画一的な部品のように扱って、システム開発をうまく進めたいと思うでしょう。
+Since the developers are selfish, as an organization's product manager, you'll want to treat this person like a replaceable, uniform component and proceed with system development.
 
-ただし、現実には「人間は心を持っている」という、当たり前すぎる事実を忘れています。
+However, in reality, we forget the fact that "human beings have a heart", which is too obvious.
 
-特に、プロダクトを前向きに進めてくれる、クリエイティブな開発者は、画一的に扱われると、それに抵抗したり、価値を見出せなくなったり、失望したりします。
+In particular, creative developers who move products forward can resist, lose value, or be disappointed when treated uniformly.
 
-小さな失敗が許されること、自由な選択が可能なこと、自己規律を望むからです。
+I want to be able to make small mistakes, be free to choose, and be self-disciplined.
 
-長期的に画一的に扱われることが続くと、鬱になる可能性もあります。
+If you continue to be treated uniformly over the long term, you may become depressed.
 
-Perlの多様性と規律という考え方は、人の心に優しく、希望のある考え方です。
+Perl's idea of ​​diversity and discipline is kind and hopeful.
 
-「Perlはどんな風にでも書けて、だれも読めない」という批判が、画一性の側から語られていますが、多様性と規律という考え方と、一度比較してみてください。
+The criticism that "Perl can be written in any way and no one can read it" has been criticized from the aspect of uniformity, but please compare it with the idea of ​​diversity and discipline.
 
-実際に、Perlが文化として語ってきたのは、以下の二つのメッセージです。
+In fact, Perl has spoken as a culture in the following two messages.
 
 <ul>
   <li>
-    Perlの文法は人間の多様性に適用するためにある程度多様である必要がある
-  </li>
+    Perl grammar needs to be somewhat diverse in order to apply to human diversity
+  </ li>
   <li>
-    後で読む人のことを考えて、規律を持ってコーディングする必要がある
-  </li>
-</ul>
+    You need to be disciplined in coding, thinking of the reader later
+  </ li>
+</ ul>

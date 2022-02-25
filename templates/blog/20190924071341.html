@@ -1,47 +1,47 @@
-<h2>Perlの正規表現はsedの表現を取り入れたもの</h2>
+<h2> Perl regular expressions incorporate sed expressions </ h2>
 
-Perlの置換の正規表現って何かに似ていると思いませんか? そうですLinux/Unixの<b>sed</b>というコマンドによく似ていますね。
-
-<pre>
-# Perlの置換の正規表現
-s/foo/bar/
-
-# sedによる置換
-sed 's/foo/bar/'
-</pre>
-
-sedですべて置換する場合のオプションもPerlと同じです。
+Don't you think Perl replacement regular expressions are similar to something? Yes, they are very similar to the Linux / Unix <b> sed </ b> command.
 
 <pre>
-# Perlですべて置換する正規表現
-s/foo/bar/g
+# Perl replacement regular expression
+s / foo / bar /
 
-# sedですべてを置換
-sed 's/foo/bar/g'
-</pre>
+Replacement with #sed
+sed's / foo / bar /'
+</ pre>
 
-<h3>Perlはsedの表現を参考にしている</h3>
+The options for replacing everything with sed are the same as for Perl.
 
-Perlというプログラミング言語のひとつの利点は、<a href="https://en.linux.perlzemi.com/">Linux</a>/Unixで学んだものが、表現が概念をそのままPerlで、使えるということです。
+<pre>
+#Regular expression to replace everything with Perl
+s / foo / bar / g
 
-<b>Perlの置換の正規表現の場合も、Linux/Unixで慣れ親しんだsedコマンドの使い方を知っていれば、それをそのままPerlプログラミングで使うことができます。</b>
+Replace everything with #sed
+sed's / foo / bar / g'
+</ pre>
 
-Linux/Unix環境で、シェルスクリプト、sed、awk、C言語を学んだユーザーにとっては、Perlの学習コストは、とても低いものになっています。
+<h3> Perl refers to the expression of sed </ h3>
 
-大学1年生のソフトウェアの授業で、C言語とUnix/Linuxサーバーについて、学ぶことと思います。C言語の文法を学習して、grep、sed、awkなどのLinuxコマンドを少し学びます。
+One of the advantages of the programming language Perl is that what you learned in <a href="https://en.linux.perlzemi.com/"> Linux </a> / Unix is ​​that the expression is Perl as it is. It means that it can be used.
 
-<b>C言語とUnix/Linuxサーバーについての知識があれば、Perlでは、使い方や概念を、そのまま活用することができるので、学習コストが低いのです。</b>
+<b> For Perl replacement regular expressions, if you know how to use the sed command that you are familiar with on Linux / Unix, you can use it in Perl programming as it is. </ b>
 
-Perlは学習コストが高いと誤解していませんでしたか。
+For users who have learned shell scripts, sed, awk, and C in a Linux / Unix environment, the cost of learning Perl is very low.
 
-ソフトウェアエンジニアにとっては、C言語とUnix/Linuxサーバーの知識の学習は必須項目ですね。
+You'll learn about C and Unix / Linux servers in a freshman software class. Learn C grammar and learn a little Linux commands such as grep, sed, and awk.
 
-その知識がしっかりしていれば、Perlの使い方を覚えるのに、１か月もかかりません。他の分野で覚えた概念がPerlでそのまま活用できるからです。
+<b> If you have knowledge of C language and Unix / Linux server, Perl allows you to use the usage and concepts as they are, so the learning cost is low. </ b>
 
-sedの使い方がほぼそのまま使えるというのも、「ユーザーが見慣れた表現は使いやすい」というPerlの哲学に基づいています。
+Did you misunderstand that Perl has a high learning cost?
 
-Perlは「つぎはぎだらけ」と批判する人たちは、Perlを否定的に語ります。
+For software engineers, learning the knowledge of C language and Unix / Linux server is a must.
 
-またPerlユーザー自身も、当たり前すぎて、Perlの使いやすさの秘密を、はっきりと理解していません。
+With that knowledge, it takes less than a month to learn how to use Perl. This is because the concepts learned in other fields can be used as they are in Perl.
 
-でも実際は、Perlの側から事実に基づいた評価を行うと、Perlは、Unix/Linuxとの親和性に非常に配慮した設計になっているといえるのです。
+The fact that sed can be used almost as it is is based on Perl's philosophy that "expressions that users are familiar with are easy to use."
+
+Those who criticize Perl as "patchy" say Perl negatively.
+
+And Perl users themselves are too obvious to understand the secrets of Perl's ease of use.
+
+But in reality, from the factual side of Perl, it can be said that Perl is designed with great consideration for its compatibility with Unix / Linux.

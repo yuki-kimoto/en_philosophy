@@ -1,52 +1,52 @@
-<h2>Perlでトップレベルに文が書けるのはシェルスクリプトと同じ</h2>
+<h2> It is the same as a shell script that you can write a sentence at the top level in Perl </ h2>
 
-Perlでトップレベルに文が書けるのはシェルスクリプトと同じです。シェルスクリプトは、もともとCUIでインタラクティブに対話をするシェルのコマンドから始まって、バッチ処理を記述するために生まれました。そのため、いきなり文を書くことができます。このアイデアをPerlも採用しました。
+Writing statements at the top level in Perl is the same as a shell script. Shell scripts were originally created to describe batch processing, starting with shell commands that interact interactively in the CUI. Therefore, you can write a sentence suddenly. Perl has also adopted this idea.
 
-いきなり文が書けるというのは、スクリプト言語の特徴で、関数定義を行う必要がありません。関数の定義の仕方を知らなくても、関数の使い方だけ覚えれば、すぐにプログラムを書けるというのが、スクリプト言語の良いところですね。
+The ability to write statements suddenly is a feature of scripting languages, and there is no need to define functions. The good thing about scripting languages ​​is that you can write a program immediately by learning how to use a function without knowing how to define it.
 
-<h4>Perlは文をトップレベルで書ける</h4>
+<h4> Perl can write sentences at the top level </ h4>
 
-Perlは文をトップレベルで書けます。
-
-<pre>
-print "Hello, World!\n";
-</pre>
-
-<h4>シェルスクリプトはトップレベルで文を書ける</h4>
-
-シェルスクリプトは文をトップレベルで書けます。
+Perl can write statements at the top level.
 
 <pre>
-echo "Hello, World\n"
-</pre>
+print "Hello, World! \ N";
+</ pre>
 
-<h3>Perlがシェルスクリプトを参考にした、トップレベルに文が書けることの意義とは</h3>
+<h4> Shell scripts can write sentences at the top level </ h4>
 
-Perlは、いくつかのプログラミング言語の文法を参考にしていますが、トップレベルにいきなり文が書けるという部分は、シェルスクリプトの文法を採用しました。
-
-C言語の場合は、トップレベルが、関数定義です。これは、構文解析の観点から見た場合は、トップレベルと、その下のレベルで、構造が同じなのできれいです。
+Shell scripts can write statements at the top level.
 
 <pre>
-main(int argc, char *argv[]){
+echo "Hello, World \ n"
+</ pre>
+
+<h3> What is the significance of Perl's ability to write sentences at the top level with reference to shell scripts? </ H3>
+
+Perl refers to the grammar of some programming languages, but adopted the grammar of shell scripts for the part where you can write sentences suddenly at the top level.
+
+For C, the top level is the function definition. From a parsing point of view, this is pretty because the structure is the same at the top level and below.
+
+<pre>
+main (int argc, char * argv []) {
   
 }
-</pre>
+</ pre>
 
-Perlとシェルと同じく、トップレベルに、文が書けます。これは、実際は関数なのですが、自動的に関数にしてくれているのです。つまり、これは、人が手軽にプログラムを書き始めるためのシンタックスシュガーなのです。
+Like Perl and the shell, you can write sentences at the top level. This is actually a function, but it automatically turns it into a function. In short, it's syntactic sugar that makes it easy for people to start writing programs.
 
 <pre>
-print "Hello, World!\n";
-</pre>
+print "Hello, World! \ N";
+</ pre>
 
-内部では、たとえば、以下のように補われています。(実際の実装ではなく、あくまでイメージです)
+Internally, for example, it is supplemented as follows. (It is an image, not an actual implementation)
 
 <pre>
 sub main {
-  print "Hello, World!\n";
+  print "Hello, World! \ N";
 }
-main();
-</pre>
+main ();
+</ pre>
 
-プログラムを書き始めるときに、ただ単に、すぐ書けるというだけなのですが、これが、すぐにちょっと書きたい。ワンライナーを書きたいという場合に、とても便利なのです。
+When I start writing a program, I just can write it right away, but I want to write this a little right away. It's very convenient when you want to write a one-liner.
 
-Perlは手軽さという点で、先輩である、シェルスクリプトをこの点で、参考にしたのですね。
+Perl is easy, so you referred to your senior shell script in this regard.

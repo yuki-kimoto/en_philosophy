@@ -1,53 +1,53 @@
-<h2>Perlのワンライナーは、awkのワンライナーの機能を参考にしたもの</h2>
+<h2> Perl's one-liner is based on the functions of awk's one-liner </ h2>
 
-Perlのワンライナーは、awkのワンライナーの機能を参考にしたものです。awkは行指向のツールで、デフォルトは、各行に対して処理するようになっています。Perlプログラミングは、行指向ではありませんが、Perlのコマンドラインオプションを使用することによって、awkの行指向のワンライナーを表現することができます。
+Perl's one-liner is based on the features of awk's one-liner. awk is a row-oriented tool that defaults to processing each row. Perl programming isn't line-oriented, but you can use Perl's command-line options to represent awk's line-oriented one-liner.
 
-ワンライナーを試すために、複数行のファイル「text.txt」を用意しますね。
+To try the one-liner, prepare a multi-line file "text.txt".
 
 <pre>
 abcd
 ppp
 abcppp
-</pre>
+</ pre>
 
-<h4>Perlのワンライナーの表現</h4>
+<h4> Perl's one-liner representation </ h4>
 
-Perlのワンライナーの表現です。先頭がabcの行をprintしています。各行はデフォルト引数「$_」に代入されています。
+A one-liner representation of Perl. I am printing a line that starts with abc. Each line is assigned to the default argument "$ _".
 
 
 <pre>
-cat text.txt | perl -n -e 'if ($_ =~ /^abc/) { print $_ }'
-</pre>
+cat text.txt | perl -n -e'if ($ _ = ~ / ^ abc /) {print $ _}'
+</ pre>
 
--eは、executeのeです。引数で与えられた、Perlプログラムを実行できます。-nはlineのnです。awkと同じように、行指向で、処理をすることができます。
+-e is e for execute. You can execute the Perl program given by the argument. -n is n for line. Like awk, it's row-oriented and can be processed.
 
-デフォルト引数を省略して、もう少し短く書くこともできます。
-
-<pre>
-cat text.txt | perl -n -e 'if (/^abc/) { print }'
-</pre>
-
-
-<h4>awkのワンライナーの表現</h4>
-
-awkのワンライナーの表現です。先頭がabcの行を出力しています。Perlでは「$_」となっているところが「$0」となっています。
+You can omit the default argument and write it a little shorter.
 
 <pre>
-cat text.txt | awk '{ if ($0 ~ /^abc/) { print $0 } }'
-</pre>
+cat text.txt | perl -n -e'if (/ ^ abc /) {print}'
+</ pre>
 
-「$0」を省略して、もう少し短くこともできます。
+
+<h4> Awk's one-liner expression </ h4>
+
+It is a one-liner expression of awk. The line beginning with abc is output. In Perl, where "$ _" is, it is "$ 0".
 
 <pre>
-cat text.txt | awk '{ if (/^abc/) { print } }'
-</pre>
+cat text.txt | awk'{if ($ 0 ~ / ^ abc /) {print $ 0}}'
+</ pre>
 
-あら不思議、コマンドラインオプションと「{}」を除いて、Perlとまったく同じになりました。
+You can omit the "$ 0" to make it a little shorter.
 
-<h3>Perlは、Unix/Linux利用者が、段階的に複雑なことに対応することを想定している</h3>
+<pre>
+cat text.txt | awk'{if (/ ^ abc /) {print}}'
+</ pre>
 
-Perlは、汎用的なプログラミング言語ですが、ノンプログラマーがgrep,sed,awkなどのツールを使って作業をしているときに、ある複雑性を超えたタイミングで、汎用的なプログラムが必要になるということを想定しています。
+Curiously, it's exactly the same as Perl, except for the command line options and "{}".
 
-Unix/Linuxのツールの利用者が、そう感じたときに、Linux/Unixコマンドから、自然に汎用的なプログラミングにシステムを成長させることができる段階的な経路を、Perlは提供しているのです。
+<h3> Perl expects Unix / Linux users to handle complex things in stages </ h3>
 
-Perlは、Unix/Linuxミドルウェアのツールボックスの中のひとつのツールとして存在していて、ユーザーが必要になったときに、使えるようになっています。
+Perl is a general-purpose programming language, but when non-programmers are working with tools such as grep, sed, and awk, they need a general-purpose program when it goes beyond a certain complexity. I am assuming that.
+
+Perl provides a step-by-step path for users of Unix / Linux tools to grow their system from Linux / Unix commands to naturally generic programming when they feel that way. ..
+
+Perl exists as a tool in the Unix / Linux middleware toolbox, ready to be used by users when they need it.
