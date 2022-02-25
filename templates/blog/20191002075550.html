@@ -1,38 +1,38 @@
-<h2> Perl reference functionality is similar to C pointer functionality </ h2>
+<h2> Perl reference functionality is similar to C pointer functionality </h2>
 
 Perl has the ability to get a reference to a value called a reference, which is similar to the functionality of a pointer in C.
 
-<h4> Perl Reference </ h4>
+<h4> Perl Reference </h4>
 
 You can get a Perl value reference with "\".
 
 <pre>
-my $ num = 1;
-my $ num_ref = \ $ num;
-</ pre>
+my $num = 1;
+my $num_ref = \ $num;
+</pre>
 
-<h4> C pointer </ h4>
+<h4> C pointer </h4>
 
 In C language, you can get the address of a value with "&" and assign it to a pointer type variable.
 
 <pre>
 int32_t num = 1;
 int32_t * num_ptr = & amp; num;
-</ pre>
+</pre>
 
-<h4> Comparison of Perl reference and C pointer </ h4>
+<h4> Comparison of Perl reference and C pointer </h4>
 
 Perl and C do the same thing, except that the symbol is "\" or "&". In the case of Perl, it says to get the reference, but in reality it just gets the value of the address. You can do address operations in C, but think of Perl's reference as an address value in C that you can't do.
 
 In C language, it is assigned to a pointer variable, but in Perl, the type is dynamic, so it can be assigned to a variable as it is.
 
-<h3> The concept of pointers learned in C language can be used as it is in Perl </ h3>
+<h3> The concept of pointers learned in C language can be used as it is in Perl </h3>
 
 You can use the concept of C language pointers that you learned hard in a university software class in Perl as they are.
 
 Also, if you started programming from Perl, you can use Perl to understand the functions that correspond to pointers in C language.
 
-Perl, like C, is a <a href="/blog/20190919070918.html"> language that clearly distinguishes between values ​​and references </a>.
+Perl, like C, is a <a href="/blog/20190919070918.html"> language that clearly distinguishes between values ​​and references</a>.
 
 One opinion is that it's easier for users to hide the distinction between values ​​and references, but it's possible to distinguish between values ​​and references because it's a very basic idea of ​​software data. That is also a merit.
 
@@ -40,14 +40,14 @@ In fields such as assembler and machine language, which are lower level than C l
 
 How about taking this difference as the individuality of the language?
 
-<h3> Other similarities between Perl and C </ h3>
+<h3> Other similarities between Perl and C </h3>
 
 In this article, I wrote that Perl references are similar to C pointers, but also Perl if statements, for statements, while statements, increments / decrements, operator priorities, scopes, and reference concepts. , Similar to C language grammar.
 
 <ul>
-  <li> <a href="/blog/20190926072429.html"> Perl if statements are similar to C if statements </a> </ li>
-  <li> <a href="/blog/20191001073128.html"> Perl while statement has the same grammar as C language while statement </a> </ li>
-  <li> <a href="/blog/20190920082045.html"> Perl increments / decrements work the same as in C </a> </ li>
-  <li> <a href="/blog/20191001075312.html"> Perl operators and C operators are similar in type and have the same priority </a> </ li>
-  <li> <a href="/blog/20191002073518.html"> Perl can use a single scope in the same way as C </a> </ li>
-</ ul>
+  <li> <a href="/blog/20190926072429.html"> Perl if statements are similar to C if statements</a> </li>
+  <li> <a href="/blog/20191001073128.html"> Perl while statement has the same grammar as C language while statement</a> </li>
+  <li> <a href="/blog/20190920082045.html"> Perl increments / decrements work the same as in C</a> </li>
+  <li> <a href="/blog/20191001075312.html"> Perl operators and C operators are similar in type and have the same priority</a> </li>
+  <li> <a href="/blog/20191002073518.html"> Perl can use a single scope in the same way as C</a> </li>
+</ul>

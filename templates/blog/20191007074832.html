@@ -1,41 +1,41 @@
-<h2> Perl's string comparison operator, eq, ne, gt, ge, lt, l, is derived from the shell script's numerical comparison operator </ h3>
+<h2> Perl's string comparison operator, eq, ne, gt, ge, lt, l, is derived from the shell script's numerical comparison operator </h3>
 
 Perl has the keywords eq, ne, gt, ge, lt, le as string comparison operators, which are derived from the numerical comparison operators in shell scripts (sh, bash, csh, zsh, ksh). ..
 
-<h3> Perl string comparison operator </ h3>
+<h3> Perl string comparison operator </h3>
 
 Perl string comparison operator. Compare strings in lexicographical order.
 
 <pre>
 # Perl string comparison operator
-$ str1 eq $ str2
-$ str1 ne $ str2
-$ str1 gt $ str2
-$ str1 ge $ str2
-$ str1 lt $ str2
-$ str1 le $ str2
-</ pre>
+$str1 eq $str2
+$str1 ne $str2
+$str1 gt $str2
+$str1 ge $str2
+$str1 lt $str2
+$str1 le $str2
+</pre>
 
-<h3> Shell script numeric comparison operator </ h3>
+<h3> Shell script numeric comparison operator </h3>
 
 Numeric comparison operator for shell scripts.
 
 <pre>
 # Shell script numeric comparison operator
-[$ num1 -eq $ num2]
-[$ num1 -ne $ num2]
-[$ num1 -gt $ num2]
-[$ num1 -ge $ num2]
-[$ num1 -lt $ num2]
-[$ num1 -le $ num2]
-</ pre>
+[$num1 -eq $num2]
+[$num1 -ne $num2]
+[$num1 -gt $num2]
+[$num1 -ge $num2]
+[$num1 -lt $num2]
+[$num1 -le $num2]
+</pre>
 
-<h3> Comparison of Perl and shell script eq, ne, gt, ge, lt, le </ h3>
+<h3> Comparison of Perl and shell script eq, ne, gt, ge, lt, le </h3>
 
 Let's compare Perl's string comparison operators eq, ne, gt, ge, lt, le with the shell script eq, ne, gt, ge, lt, le. The keyword names are the same as the shell scripts, but they are quite different.
 
 In the case of Perl, string comparison is performed, while in the case of shell, numerical comparison is performed. For shell crypto, the operator must be preceded by a "-" and the comparison operator must be enclosed in "[]". For Perl, you don't need to.
 
-For Perl, the <a href="/blog/20191001075312.html"> numeric comparison operator was the same as in C </a>. C language is active in fields where processing speed is required, such as numerical calculation, but Perl borrows numerical comparison operators from here.
+For Perl, the <a href="/blog/20191001075312.html"> numeric comparison operator was the same as in C</a>. C language is active in fields where processing speed is required, such as numerical calculation, but Perl borrows numerical comparison operators from here.
 
 On the other hand, I borrowed the numeric comparison operator in the shell script for the string comparison operator. One reason is that the operators eq, ne, gt, ge, lt, le are letters, not symbols, so they are easy to associate with when comparing strings.

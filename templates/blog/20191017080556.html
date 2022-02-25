@@ -1,4 +1,4 @@
-<h2> Perl's one-liner is based on the functions of awk's one-liner </ h2>
+<h2> Perl's one-liner is based on the functions of awk's one-liner </h2>
 
 Perl's one-liner is based on the features of awk's one-liner. awk is a row-oriented tool that defaults to processing each row. Perl programming isn't line-oriented, but you can use Perl's command-line options to represent awk's line-oriented one-liner.
 
@@ -8,16 +8,16 @@ To try the one-liner, prepare a multi-line file "text.txt".
 abcd
 ppp
 abcppp
-</ pre>
+</pre>
 
-<h4> Perl's one-liner representation </ h4>
+<h4> Perl's one-liner representation </h4>
 
-A one-liner representation of Perl. I am printing a line that starts with abc. Each line is assigned to the default argument "$ _".
+A one-liner representation of Perl. I am printing a line that starts with abc. Each line is assigned to the default argument "$_".
 
 
 <pre>
-cat text.txt | perl -n -e'if ($ _ = ~ / ^ abc /) {print $ _}'
-</ pre>
+cat text.txt | perl -n -e'if ($_ = ~ / ^ abc /) {print $_}'
+</pre>
 
 -e is e for execute. You can execute the Perl program given by the argument. -n is n for line. Like awk, it's row-oriented and can be processed.
 
@@ -25,26 +25,26 @@ You can omit the default argument and write it a little shorter.
 
 <pre>
 cat text.txt | perl -n -e'if (/ ^ abc /) {print}'
-</ pre>
+</pre>
 
 
-<h4> Awk's one-liner expression </ h4>
+<h4> Awk's one-liner expression </h4>
 
-It is a one-liner expression of awk. The line beginning with abc is output. In Perl, where "$ _" is, it is "$ 0".
+It is a one-liner expression of awk. The line beginning with abc is output. In Perl, where "$_" is, it is "$0".
 
 <pre>
-cat text.txt | awk'{if ($ 0 ~ / ^ abc /) {print $ 0}}'
-</ pre>
+cat text.txt | awk'{if ($0 ~ / ^ abc /) {print $0}}'
+</pre>
 
-You can omit the "$ 0" to make it a little shorter.
+You can omit the "$0" to make it a little shorter.
 
 <pre>
 cat text.txt | awk'{if (/ ^ abc /) {print}}'
-</ pre>
+</pre>
 
 Curiously, it's exactly the same as Perl, except for the command line options and "{}".
 
-<h3> Perl expects Unix / Linux users to handle complex things in stages </ h3>
+<h3> Perl expects Unix / Linux users to handle complex things in stages </h3>
 
 Perl is a general-purpose programming language, but when non-programmers are working with tools such as grep, sed, and awk, they need a general-purpose program when it goes beyond a certain complexity. I am assuming that.
 

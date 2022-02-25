@@ -1,26 +1,26 @@
-<h2> It is the same as a shell script that you can write a sentence at the top level in Perl </ h2>
+<h2> It is the same as a shell script that you can write a sentence at the top level in Perl </h2>
 
 Writing statements at the top level in Perl is the same as a shell script. Shell scripts were originally created to describe batch processing, starting with shell commands that interact interactively in the CUI. Therefore, you can write a sentence suddenly. Perl has also adopted this idea.
 
 The ability to write statements suddenly is a feature of scripting languages, and there is no need to define functions. The good thing about scripting languages ​​is that you can write a program immediately by learning how to use a function without knowing how to define it.
 
-<h4> Perl can write sentences at the top level </ h4>
+<h4> Perl can write sentences at the top level </h4>
 
 Perl can write statements at the top level.
 
 <pre>
 print "Hello, World! \ N";
-</ pre>
+</pre>
 
-<h4> Shell scripts can write sentences at the top level </ h4>
+<h4> Shell scripts can write sentences at the top level </h4>
 
 Shell scripts can write statements at the top level.
 
 <pre>
-echo "Hello, World \ n"
-</ pre>
+echo "Hello, World\n"
+</pre>
 
-<h3> What is the significance of Perl's ability to write sentences at the top level with reference to shell scripts? </ H3>
+<h3> What is the significance of Perl's ability to write sentences at the top level with reference to shell scripts? </H3>
 
 Perl refers to the grammar of some programming languages, but adopted the grammar of shell scripts for the part where you can write sentences suddenly at the top level.
 
@@ -30,13 +30,13 @@ For C, the top level is the function definition. From a parsing point of view, t
 main (int argc, char * argv []) {
   
 }
-</ pre>
+</pre>
 
 Like Perl and the shell, you can write sentences at the top level. This is actually a function, but it automatically turns it into a function. In short, it's syntactic sugar that makes it easy for people to start writing programs.
 
 <pre>
 print "Hello, World! \ N";
-</ pre>
+</pre>
 
 Internally, for example, it is supplemented as follows. (It is an image, not an actual implementation)
 
@@ -45,7 +45,7 @@ sub main {
   print "Hello, World! \ N";
 }
 main ();
-</ pre>
+</pre>
 
 When I start writing a program, I just can write it right away, but I want to write this a little right away. It's very convenient when you want to write a one-liner.
 

@@ -1,4 +1,4 @@
-<h2> You can make the most of multiCPU even in Perl </ h2>
+<h2> You can make the most of multiCPU even in Perl </h2>
 
 Perl explains how to support multiple CPUs. There are many misunderstandings on the Web that Perl may not support multiple CPUs.
 
@@ -6,37 +6,37 @@ The exact information is that one method can support multiple CPUs, and another 
 
 Let's understand what kind of method can support multi-CPU and what kind of method can not support multi-CPU.
 
-<h3> Multi-CPU support using pre-fork in web applications </ h3>
+<h3> Multi-CPU support using pre-fork in web applications </h3>
 
 In Perl, if it is a Web application, you can use a function called prefork to support multiple CPUs.
 
 You can make full use of the resources of multiple CPUs by using a function called prefork.
 
-<b> The misunderstanding is that in Perl, you can make full use of the resources of multiple CPUs by using a web server that supports preforking in your web application. </ b>
+<b> The misunderstanding is that in Perl, you can make full use of the resources of multiple CPUs by using a web server that supports preforking in your web application. </b>
 
 Web servers that support prefolk include Starman and Mojolicious.
 
-<h4> Starman </ h4>
+<h4> Starman </h4>
 
 Starman is a web server that supports Perl prefolks.
 
 <blockquote>
-Starman is a versatile Prefork web server based on the Net :: Server module. The author is Mr. Miyagawa who develops PSGI / Plack and formulates specifications.
+Starman is a versatile Prefork web server based on the Net::Server module. The author is Mr. Miyagawa who develops PSGI / Plack and formulates specifications.
 
-<a href="https://gihyo.jp/dev/serial/01/perl-hackers-hub/002402"> The 24th PSGI / Plack Practice Introduction-Starman, Starlet, Twiggy, Plack :: Middleware, Server: : Starter (2)> </a>
-</ blockquote>
+<a href="https://gihyo.jp/dev/serial/01/perl-hackers-hub/002402"> The 24th PSGI / Plack Practice Introduction-Starman, Starlet, Twiggy, Plack::Middleware, Server: : Starter (2)></a>
+</blockquote>
 
-<h4> Mojolicious </ h4>
+<h4> Mojolicious </h4>
 
 A Perl web framework called Mojolicious has a prefolk-enabled web server.
 
 <blockquote>
-Mojo :: Server :: Prefork is a full-featured UNIX-optimized UNIX-optimized asynchronous IO HTTP and WebSocket built-in server.
+Mojo::Server::Prefork is a full-featured UNIX-optimized UNIX-optimized asynchronous IO HTTP and WebSocket built-in server.
 
-<a href="https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki/Mojo :: Server :: Prefork"> Mojo :: Server :: Prefork --Prefork non-blocking IO HTTP WebSocket server </a>
-</ blockquote>
+<a href="https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki/Mojo::Server::Prefork"> Mojo::Server::Prefork --Prefork non-blocking IO HTTP WebSocket server</a>
+</blockquote>
 
-<h3> Why is it believed that Perl cannot make good use of multiCPUs? </ h3>
+<h3> Why is it believed that Perl cannot make good use of multiCPUs? </h3>
 
 In general, multi-CPU support starts with the topic of threads as the very first topic.
 
@@ -50,9 +50,9 @@ From this, it is misunderstood that Perl is not multi-CPU compatible as a langua
 
 Perl uses the Unix / Linux fork function, and if you use a web server that implements preforking, you can support multiple CPUs in your web application.
 
-<b> It's not a feature of Perl's language itself, but if you use a method that doesn't use the feature of the language itself, you can support multiple CPUs. </ b>
+<b> It's not a feature of Perl's language itself, but if you use a method that doesn't use the feature of the language itself, you can support multiple CPUs. </b>
 
-<h3> If you use the language extension called XS, parallelization by GPU and CPU is also possible </ h3>
+<h3> If you use the language extension called XS, parallelization by GPU and CPU is also possible </h3>
 
 When it comes to parallel processing, if you really want the performance of parallelization, you need to know that threads can only give you poor performance.
 
@@ -60,6 +60,6 @@ The cost of thread switching is high, and triple the number of threads does not 
 
 In order to make the best use of computational resources, it is necessary to optimize at the hardware level such as GPU and CPU.
 
-In Perl, you can use <a href="https://perlzemi.com/blog/20100809127859.html"> XS, a C / C ++ language extension </a> to write C / C ++ and GPUs. You can perform parallel processing by hardware using a C-like language.
+In Perl, you can use <a href="https://perlzemi.com/blog/20100809127859.html"> XS, a C / C ++ language extension</a> to write C / C ++ and GPUs. You can perform parallel processing by hardware using a C-like language.
 
-<b> At the Perl level, it is single thread, but if you write it at the C / C ++ level, you can make the best use of the parallel function of hardware such as CPU and GPU. </ b>
+<b> At the Perl level, it is single thread, but if you write it at the C / C ++ level, you can make the best use of the parallel function of hardware such as CPU and GPU. </b>

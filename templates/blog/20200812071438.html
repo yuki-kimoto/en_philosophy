@@ -1,8 +1,8 @@
-<h2> Talking about the relationship between C / C ++ and Perl </ h2>
+<h2> Talking about the relationship between C / C ++ and Perl </h2>
 
 I will talk about the relationship between C language / C ++ and Perl.
 
-<h3> Perl is written in C </ h3>
+<h3> Perl is written in C </h3>
 
 Perl is written in C. The Perl programming language is written in C and is expected to be compiled by a C compiler such as gcc.
 
@@ -10,7 +10,7 @@ In this respect, Perl is dependent on the C language.
 
 Also, Python, PHP, and Ruby created after Perl are also written in C language. Writing a dynamic programming language in C is widespread, but the Perl example was early on.
 
-<h3> C and programming languages ​​</ h3>
+<h3> C and programming languages ​​</h3>
 
 C is a good programming language for creating practical programming languages. C language can be compiled in many OS environments, and after compilation, it becomes a machine language, and memory operations such as memory allocation and access by memory address position can be freely performed.
 
@@ -22,7 +22,7 @@ This is not the inferiority of C language, but it seems to be the philosophy of 
 
 If you need string substitutions, dynamic arrays, associative arrays, etc., you have to implement them yourself.
 
-<h3> Call C from Perl </ h3>
+<h3> Call C from Perl </h3>
 
 Perl has a mechanism called XS for calling C language functions. XS is written in C, compiled into a shared library (.so, .dll) and can be called from Perl.
 
@@ -30,9 +30,9 @@ This means that a library written in C can be bound by calling the header and so
 
 Also, if it is a shared library, you can call it.
 
-<a href="https://perlzemi.com/blog/20100809127859.html"> XS </a>, FFI, Inline :: C, <a href="https" There are //metacpan.org/pod/SPVM/"> SPVM </a>, and XS is one of them.
+<a href="https://perlzemi.com/blog/20100809127859.html"> XS</a>, FFI, Inline::C, <a href="https" There are //metacpan.org/pod/SPVM/"> SPVM</a>, and XS is one of them.
 
-<h3> Call C ++ from Perl </ h3>
+<h3> Call C ++ from Perl </h3>
 
 Perl has a mechanism called XS for calling functions in C language, but the machine language in C ++ is practically the same as the machine language generated from C language. The only difference between C ++ and C is the function call name. Therefore, you can call a C ++ function by changing the call name of the C ++ function to the call name of the C language.
 
@@ -42,10 +42,10 @@ This can be done using the "extern" C "" syntax.
 extern "C" {
   // C ++ functions
 }
-</ pre>
+</pre>
 
 Libraries written in C ++ can be bound by calling the header and source files from the XS, if any.
 
 Also, if it is a shared library, you can call it. Being a shared library means that it is already in the C language function call format.
 
-The mechanism for calling C ++ from Perl is <a href="https://perlzemi.com/blog/20100809127859.html"> XS </a>, FFI, Inline :: C, as in C language. For example, <a href="https://metacpan.org/pod/SPVM/"> SPVM </a>.
+The mechanism for calling C ++ from Perl is <a href="https://perlzemi.com/blog/20100809127859.html"> XS</a>, FFI, Inline::C, as in C language. For example, <a href="https://metacpan.org/pod/SPVM/"> SPVM</a>.

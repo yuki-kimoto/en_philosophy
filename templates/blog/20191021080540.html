@@ -1,4 +1,4 @@
-<h2> Reassess Perl's Plain Old-The Value of Simple and Classic </ h2>
+<h2> Reassess Perl's Plain Old-The Value of Simple and Classic </h2>
 
 Perl is a programming language that was born in 1987. It has an old and modern origin in dynamically typed languages. The language mechanism is simple.
 
@@ -12,11 +12,11 @@ The backward compatibility is very high, and the system can be operated stably.
 
 Below are some examples of how simple it works in Perl.
 
-<h3> Reference counting GC </ h3>
+<h3> Reference counting GC </h3>
 
 Perl uses a classic and simple reference-counted GC.
 
-<a href="https://perlzemi.com/blog/20131010138141.html"> Characteristics of Perl's Garbage Collection (GC) --Reference Count GC </a>
+<a href="https://perlzemi.com/blog/20131010138141.html"> Characteristics of Perl's Garbage Collection (GC) --Reference Count GC</a>
 
 The strength of reference counting GC is that it is the simplest to implement in GC. It is an implementation that releases the object whose reference count is 0.
 In the internal implementation of a programming language, the implementation is consistent and rarely changes with Perl versions.
@@ -33,7 +33,7 @@ The disadvantages of reference counting GC are, frankly, that the throughput is 
 
 In the post-Perl era, reference counting GC was once regarded as an old and bad implementation, but it is clear that low latency is important for performance in non-blocking I / O, which is a Web server implementation. Therefore, the reference count GC is being re-evaluated.
 
-<h3> Single thread </ h3>
+<h3> Single thread </h3>
 
 Perl programs are supposed to work on the assumption that they are single-threaded. Perl used to aim for threads, but now Perl's threading capabilities are deprecated.
 
@@ -51,9 +51,9 @@ In case of misunderstanding, I'll add it, but the lack of threads does not mean 
 
 Read this article about it.
 
-<a href="/blog/20190918081634.html"> You can make the most of multiCPU even in Perl </a>
+<a href="/blog/20190918081634.html"> You can make the most of multiCPU even in Perl</a>
 
-<h3> I've heard that Perl is complicated, but isn't it really? </ H3>
+<h3> I've heard that Perl is complicated, but isn't it really? </H3>
 
 If you read this far, you may be wondering, "Perl is said to be complicated in the world, but isn't it?"
 
@@ -66,10 +66,10 @@ Sintuck sugar is a hassle to write many times, so let's prepare a notation that 
 For example, in Perl, the following meanings are the same, but there are two expressions.
 
 <pre>
-my% person = ('name','yuki','age', 19);
+my%person = ('name','yuki','age', 19);
 
-my% person = (name =>'yuki', age => 19);
-</ pre>
+my%person = (name =>'yuki', age => 19);
+</pre>
 
 Perl has a syntack sugar that looks the same when viewed from a computer, but looks different when viewed from a human.
 
@@ -85,4 +85,4 @@ However, it is also true that having multiple writing styles makes maintainabili
 
 Therefore, before starting development, there is something called best practice from the accumulation of knowledge for a long time, so I think it is good to read it once.
 
-<a href="https://perlzemi.com/blog/20091120124667.html"> A list of modern Perl writing methods </a>
+<a href="https://perlzemi.com/blog/20091120124667.html"> A list of modern Perl writing methods</a>

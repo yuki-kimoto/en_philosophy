@@ -1,77 +1,77 @@
-<h2> Perl operators and C operators are similar in type and have the same priority </ h2>
+<h2> Perl operators and C operators are similar in type and have the same priority </h2>
 
 Perl operators and C operators are similar in type and have the same operator precedence.
 
-<h4> Perl operators </ h4>
+<h4> Perl operators </h4>
 
 Perl operator. We have picked up the same operators in C language and the ones with similar functions. Addition operator, subtraction operator, subtraction operator, subtraction operator, remainder operator, arithmetic operator such as increment / decrement, numerical comparison operator, logical operator, single term operator, shift operator, arrow operator, The three-term operator is taken up.
 
 <pre>
 # Addition operator
-my $ ret = $ x + $ y;
+my $ret = $x + $y;
 
 # Subtraction operator
-my $ ret = $ x-$ y;
+my $ret = $x-$y;
 
 # Subtraction operator
-my $ ret = $ x * $ y;
+my $ret = $x * $y;
 
 # Subtraction operator
-my $ ret = $ x / $ y;
+my $ret = $x / $y;
 
 #Remainder operator
-my $ ret = $ x% $ y;
+my $ret = $x%$y;
 
 #Increment / decrement
-my $ ret = ++ $ x;
-my $ ret = $ x ++;
-my $ ret = --$ x;
-my $ ret = $ x-;
+my $ret = ++ $x;
+my $ret = $x ++;
+my $ret = --$x;
+my $ret = $x-;
 
 # Numerical comparison operator
-my $ ret = $ x> $ y;
-my $ ret = $ x> = $ y;
-my $ ret = $ x <$ y;
-my $ ret = $ x <= $ y;
-my $ ret = $ x == $ y;
-my $ ret = $ x! = $ y;
+my $ret = $x> $y;
+my $ret = $x> = $y;
+my $ret = $x <$y;
+my $ret = $x <= $y;
+my $ret = $x == $y;
+my $ret = $x! = $y;
 
 # Logical operator
-my $ ret = $ x && $ y;
-my $ ret = $ x || $ y;
-my $ ret =! $ x;
+my $ret = $x && $y;
+my $ret = $x || $y;
+my $ret =! $x;
 
 # Unary operator
-my $ ret = + $ x;
-my $ ret =-$ x;
+my $ret = + $x;
+my $ret =-$x;
 
 #Right shift operator
-my $ ret = $ x << $ y;
+my $ret = $x << $y;
 
 #Left shift operator
-my $ ret = $ x >> $ y;
+my $ret = $x >> $y;
 
 # Substitution operator
-my $ ret = $ x;
-my $ ret + = $ x;
-my $ ret-= $ x;
-my $ ret * = $ x;
-my $ ret / = $ x;
-my $ ret% = $ x;
-my $ ret >> = $ x;
-my $ ret << = $ x;
+my $ret = $x;
+my $ret + = $x;
+my $ret-= $x;
+my $ret * = $x;
+my $ret / = $x;
+my $ret%= $x;
+my $ret >> = $x;
+my $ret << = $x;
 
 #Arrow operator
-my $ ret = $ foo-> {x};
+my $ret = $foo->{x};
 
 # If you define an accessor, the above can be written as
-my $ ret = $ foo-> x;
+my $ret = $foo->x;
 
 # Ternary operator
-my $ ret = $ flag? $ x: $ y;
-</ pre>
+my $ret = $flag? $x: $y;
+</pre>
 
-<h4> C operator </ h4>
+<h4> C operator </h4>
 
 C language operator. Addition operator, subtraction operator, subtraction operator, subtraction operator, remainder operator, arithmetic operator such as increment / decrement, numerical comparison operator, logical operator, single term operator, shift operator, arrow operator, The three-term operator is taken up.
 
@@ -89,7 +89,7 @@ int32_t ret = x * y;
 int32_t ret = x / y;
 
 // Residual operator
-int32_t ret = x% y;
+int32_t ret = x%y;
 
 // Increment / Decrement
 int32_t ret = ++ x;
@@ -126,18 +126,18 @@ int32_t ret + = x;
 int32_t ret-= x;
 int32_t ret * = x;
 int32_t ret / = x;
-int32_t ret% = x;
+int32_t ret%= x;
 int32_t ret >> = x;
 int32_t ret << = x;
 
 // Arrow operator
-int32_t ret = foo-> x;
+int32_t ret = foo->x;
 
 // Ternary operator
 int32_t ret = flag? x: y;
-</ pre>
+</pre>
 
-<h4> Comparison of Perl operators and C operators </ h4>
+<h4> Comparison of Perl operators and C operators </h4>
 
 Numerical operators, numeric comparison operators, single-term operators, logical operators, shift operators, increment / decrement, assignment operators, and ternary operators of Perl operators have the same functions as C language.
 
@@ -149,15 +149,14 @@ If you define a method for accessing a field called an accessor, Perl field acce
 
 The C language has a ternary operator, but it also exists in Perl. An operator that can return a value depending on the condition.
 
-<h4> Perl operator precedence </ h4>
+<h4> Perl operator precedence </h4>
 
 Perl operator precedence. I am writing from the highest one.
 
 <pre>
-Left join->
-Unbound ++ -
+Left join->Unbound++ -
 Right join! Unary + unary-
-Left join * /% x
+Left join * /%x
 Left join +-
 Left join << >>
 Unbonded <> <=> =
@@ -165,15 +164,14 @@ Unbonded ==! =
 Left join &&
 Left join ||
 Assignment operators such as right join = + =-= * =
-</ pre>
+</pre>
 
-<h4> C language operator precedence </ h4>
+<h4> C language operator precedence </h4>
 
 The precedence of C language operators. I am writing from the highest one.
 
 <pre>
-Left join ++-->
-Right join! Unary + unary-++-
+Left join ++-->Rightjoin! Unary + unary-++-
 Left join * /%
 Left join +-
 Left join << >>
@@ -181,10 +179,10 @@ Left join <=>> =
 Left join ==! =
 Left join &&
 Left join ||
-Right join = + =-= * = / =% = << = >> = and other assignment operators
-</ pre>
+Right join = + =-= * = / =%= << = >> = and other assignment operators
+</pre>
 
-<h4> Comparison of Perl operator precedence and C operator precedence </ h4>
+<h4> Comparison of Perl operator precedence and C operator precedence </h4>
 
 Let's compare the precedence of Perl operators with the precedence of C operators. In Perl, it is the same as in C, except that the arrow operator has higher precedence than the increment / decrement operator.
 
@@ -198,15 +196,15 @@ This means that Perl takes care so that users who have learned the C language ca
 
 C language is an introductory material and is a programming language that can be said to come out without fail. Perl is ready for users familiar with the C language to get started quickly without any confusion.
 
-<h3> Other similarities between Perl and C </ h3>
+<h3> Other similarities between Perl and C </h3>
 
 In this article, I wrote that Perl's operator types and operator priorities are similar to C, but Perl's if statements, for statements, while statements, increments / decrements, and operator priorities. The order, scope, and reference concept are similar to the C language grammar.
 
 <ul>
-  <li> <a href="/blog/20190926072429.html"> Perl if statements are similar to C if statements </a> </ li>
-  <li> <a href="/blog/20190925080555.html"> Perl for statement has the same grammar as C language for statement </a> </ li>
-  <li> <a href="/blog/20191001073128.html"> Perl while statement has the same grammar as C language while statement </a> </ li>
-  <li> <a href="/blog/20190920082045.html"> Perl increments / decrements work the same as in C </a> </ li>
-  <li> <a href="/blog/20191002073518.html"> Perl can use a single scope in the same way as C </a> </ li>
-  <li> <a href="/blog/20191002075550.html"> Perl reference functionality is the same as C pointer functionality </a> </ li>
-</ ul>
+  <li> <a href="/blog/20190926072429.html"> Perl if statements are similar to C if statements</a> </li>
+  <li> <a href="/blog/20190925080555.html"> Perl for statement has the same grammar as C language for statement</a> </li>
+  <li> <a href="/blog/20191001073128.html"> Perl while statement has the same grammar as C language while statement</a> </li>
+  <li> <a href="/blog/20190920082045.html"> Perl increments / decrements work the same as in C</a> </li>
+  <li> <a href="/blog/20191002073518.html"> Perl can use a single scope in the same way as C</a> </li>
+  <li> <a href="/blog/20191002075550.html"> Perl reference functionality is the same as C pointer functionality</a> </li>
+</ul>

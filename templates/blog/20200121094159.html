@@ -1,4 +1,4 @@
-<h2> Advantages of dynamically typed languages ​​that can add function (subroutine) arguments </ h2>
+<h2> Advantages of dynamically typed languages ​​that can add function (subroutine) arguments </h2>
 
 The number of arguments of a function (subroutine) of a dynamic language such as Perl is dynamic, and you can add arguments even after implementing the subroutine.
 
@@ -7,21 +7,21 @@ This means that if the subroutine definition is modified, the original function 
 <pre>
 # First one argument
 sub func {
-  my ($ arg) = @_;
+  my ($arg) = @_;
 }
 
 #Call
 func (1);
-</ pre>
+</pre>
 
 Now suppose you need an option for this subroutine. In this case, there is no need to modify the original call location.
 
 <pre>
 # Add option
 sub func {
-  my ($ arg, $ opt) = @_;
+  my ($arg, $opt) = @_;
   
-  $ opt || = {};
+  $opt || = {};
 }
 
 #The original call doesn't have to be modified
@@ -29,9 +29,9 @@ func (1);
 
 #Call with options
 func (1, {foo => 4});
-</ pre>
+</pre>
 
-<h3> What kind of method can be considered to realize it in a statically type language? </ H3>
+<h3> What kind of method can be considered to realize it in a statically type language? </H3>
 
 For example, you can use the Java or C ++ overload feature to define a new method with the same name, but with a different number of arguments, without breaking the original call.
 

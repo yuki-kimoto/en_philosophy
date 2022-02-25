@@ -1,16 +1,16 @@
-<h2> Is it true that you shouldn't use Perl on Windows? </ h2>
+<h2> Is it true that you shouldn't use Perl on Windows? </h2>
 
 "Is it true that you shouldn't use Perl on Windows?"
 
 Let's answer this question.
 
-<h3> Perl supports Windows </ h3>
+<h3> Perl supports Windows </h3>
 
 First and foremost, the Perl core supports Windows.
 
 Perl is written in C, but if you look at the source code, you'll find porting for Windows.
 
-<h3> Distribution for Windows </ h3>
+<h3> Distribution for Windows </h3>
 
 Perl has distributions for Windows, Active Perl and Strawberry Perl.
 
@@ -18,7 +18,7 @@ Think of a distribution as an easy-to-install and easy-to-use version of Perl on
 
 Both Active Perl and Strawberry Perl were released shortly after the latest version of Perl was released.
 
-<h3> Why should some people not use Perl on Windows? </ H3>
+<h3> Why should some people not use Perl on Windows? </H3>
 
 Why does some people say that Perl works fine on Windows and the distribution is up to date, but you shouldn't use Perl on Windows?
 
@@ -28,11 +28,11 @@ To write the conclusion first, Perl can handle Japanese correctly on Windows, an
 
 However, the fact that such criticisms came out means that Perl's Japanese processing certainly had a period of turmoil historically.
 
-<h3> What is the confusion of Perl's Japanese processing? </ H3>
+<h3> What is the confusion of Perl's Japanese processing? </H3>
 
 When you search the Web, Perl has various Japanese processing methods.
 
-jcode.pl, JCode.pm, Encode, encoding, JPerl, binmode, utf8, utf8 :: is_uft8.
+jcode.pl, JCode.pm, Encode, encoding, JPerl, binmode, utf8, utf8::is_uft8.
 
 So what exactly should we trust?
 
@@ -40,7 +40,7 @@ Why are the Japanese processing methods that exist on the Web so mixed?
 
 One reason is the transition of the times.
 
-<h4> Perl 4 and Perl 5 early </ h4> that did not support Japanese correctly
+<h4> Perl 4 and Perl 5 early </h4> that did not support Japanese correctly
 
 Initially in Perl 4 and Perl 5, there was no Unicode support.
 
@@ -60,7 +60,7 @@ Unicde was experimentally supported in Perl 5.6, and Encode was introduced in Pe
 
 This is between 2002 and 2007.
 
-<h4> Japanese processing, time of turmoil </ h4>
+<h4> Japanese processing, time of turmoil </h4>
 
 Of course, just because Unicode is supported doesn't mean you can easily change to a new habit because you have the old habit.
 
@@ -72,7 +72,7 @@ Also, the new Unicode mechanism is a mechanism that clearly distinguishes betwee
 
 The new Unicode mechanism was inconvenient and unclear. When I combined the characters, they were garbled and I got a Wide Character warning, and I felt that this was a failure of the Perl core team.
 
-There was a time when utf8 :: is_utf8 was misunderstood that Perl could determine if it was using an internal character code or an external character code.
+There was a time when utf8::is_utf8 was misunderstood that Perl could determine if it was using an internal character code or an external character code.
 
 It was misunderstood by people familiar with Perl, the Perl community, and CPAN authors.
 
@@ -84,7 +84,7 @@ When I think "what should I do?", I can't think of a better way.
 
 I think Perl's core team has done the best implementation within the constraints.
 
-<h4> The simple solution is encode when you go out, decode when you go inside </ h4>
+<h4> The simple solution is encode when you go out, decode when you go inside </h4>
 
 The simple and good policy of Perl's character code in 2020 is to use the encode function of the Encode module to convert it to the actual character code, and then use the decode function to convert it to the internal character code. ..
 
@@ -97,25 +97,25 @@ There are other ways to do it in terms of performance and ease of writing, but f
 Details are explained in the following article.
 
 <ul>
-  <li> <a href="https://perlzemi.com/blog/20091118124667.html"> Encode module-Properly handle multibyte strings such as Japanese </a> </ li>
-</ ul>
+  <li> <a href="https://perlzemi.com/blog/20091118124667.html"> Encode module-Properly handle multibyte strings such as Japanese</a> </li>
+</ul>
 
-<h3> Frequently Asked Questions </ h3>
+<h3> Frequently Asked Questions </h3>
 
-<h4> How do you handle Japanese file names? </ h4>
+<h4> How do you handle Japanese file names? </h4>
 
 Encode to cp932 when passing it to the open function. The file name is outside the program (OS is outside the program), so encode it at the position where you call the open function.
 
 <pre>
 use utf8;
 
-my $ file ='Ah.txt';
+my $file ='Ah.txt';
 
-open my $ fh,'<', encode ('cp932', $ file)
+open my $fh,'<', encode ('cp932', $file)
   or die "Can't open file: $!";
-</ pre>
+</pre>
 
-The same applies to functions that receive file names other than open (unlink, File :: Copy :: copy, File :: Copy :: move).
+The same applies to functions that receive file names other than open(unlink, File::Copy::copy, File::Copy::move).
 
 If you have too many, subrouting it will make things a little easier.
 
@@ -123,15 +123,15 @@ If you have too many, subrouting it will make things a little easier.
 use utf8;
 
 sub cp932 {
-  my ($ file) = @_;
+  my ($file) = @_;
   
-  $ file = encode ('cp932', $ file);
+  $file = encode ('cp932', $file);
   
-  return $ file;
+  return $file;
 }
 
-my $ file ='Ah.txt';
+my $file ='Ah.txt';
 
-open my $ fh,'<', cp932 ($ file)
+open my $fh,'<', cp932 ($file)
   or die "Can't open file: $!";
-</ pre>
+</pre>

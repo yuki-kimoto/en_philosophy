@@ -1,4 +1,4 @@
-<h2> Perl makes a clear distinction between values ​​and references </ h2>
+<h2> Perl makes a clear distinction between values ​​and references </h2>
 
 Perl is a programming language that makes a clear distinction between values ​​and references, which is rare in dynamic programming languages.
 
@@ -8,7 +8,7 @@ The values ​​and pointers in C are the values ​​and references in Perl. 
 
 First of all, I will write what I want you to remember as a premise.
 
-<h3> Dynamic arrays and associative arrays </ h3>
+<h3> Dynamic arrays and associative arrays </h3>
 
 Perl has built-in dynamic arrays and associative arrays in the language. In the Perl language, dynamic arrays are simply called arrays, and associative arrays are called hashes.
 
@@ -17,10 +17,10 @@ Perl has built-in dynamic arrays and associative arrays in the language. In the 
 my @nums = (1, 2, 3);
 
 #Hash (associative array)
-my% person = (age => 12, name =>'kimoto');
-</ pre>
+my%person = (age => 12, name =>'kimoto');
+</pre>
 
-<b> In Perl, keep in mind that variables to which arrays and hashes can be assigned are represented by the special symbols "@" and "%". </ b>
+<b> In Perl, keep in mind that variables to which arrays and hashes can be assigned are represented by the special symbols "@" and "%". </b>
 
 Remember that "@" is similar to the acronym a for Array. Remember that the "%" seems to correspond to a key and a value.
 
@@ -28,92 +28,92 @@ Variables to which numbers or strings are assigned are represented by "$".
 
 <pre>
 # Numbers and strings
-my $ num = 4;
-my $ name ='kimoto';
-</ pre>
+my $num = 4;
+my $name ='kimoto';
+</pre>
 
-<h4> Variable correspondence </ h4>
+<h4> Variable correspondence </h4>
 
 I will briefly describe the correspondence of variables.
 
 <table>
-  <tr> <td> Numbers and strings </ td> <td> $ num, $ name </ td> </ tr>
-  <tr> <td> Array (dynamic array) </ td> <td> @nums </ td> </ tr>
-  <tr> <td> Hash (associative array) </ td> <td>% person </ td> </ tr>
-</ table>
+  <tr> <td> Numbers and strings </td> <td> $num, $name </td> </tr>
+  <tr> <td> Array (dynamic array) </td> <td> @nums </td> </tr>
+  <tr> <td> Hash (associative array) </td> <td>%person </td> </tr>
+</table>
 
 
-<h3> Perl's default assignment is a copy of the value </ h3>
+<h3> Perl's default assignment is a copy of the value </h3>
 
 Perl is based on the grammar of C language, and is considered to be easy for those who have learned C language to learn.
 
 The default behavior of assignments in C is copying values. Perl has the same specifications.
 
-<h4> Copy of numbers </ h4>
+<h4> Copy of numbers </h4>
 
 Let's copy the numbers.
 
 <pre>
-my $ num1 = 1;
+my $num1 = 1;
 
 # Copy of numbers
-my $ num2 = $ num2;
-</ pre>
+my $num2 = $num2;
+</pre>
 
 The value 1 is copied. Are you surprised? You are not surprised. This is a familiar operation for those who know the language specifications of C language.
 
-<h4> Copy of string </ h4>
+<h4> Copy of string </h4>
 
 Let's copy the string.
 
 <pre>
-my $ name1 ='kimoto';
+my $name1 ='kimoto';
 
 #Copy of string
-my $ name2 = $ name1;
-</ pre>
+my $name2 = $name1;
+</pre>
 
-So what will happen? In fact, the string is copied. Even if you change $ name1, the value of $ name2 does not change.
+So what will happen? In fact, the string is copied. Even if you change $name1, the value of $name2 does not change.
 
-It is a Perl language specification that a copy is made when a <b> string is assigned. You can safely pass a string. </ b>
+It is a Perl language specification that a copy is made when a <b> string is assigned. You can safely pass a string. </b>
 
 The internal implementation is copy-on-write. Performance is very good and there are no conflict issues on a single thread.
 
-<h3> Copy of array </ h3>
+<h3> Copy of array </h3>
 
 Let's copy the array.
 
 <pre>
-my @ nums1 = (1, 2, 3);
+my @nums1 = (1, 2, 3);
 
 # Copy of array
-my @ nums2 = @ nums1;
-</ pre>
+my @nums2 = @nums1;
+</pre>
 
-What will happen now? The array itself is copied. Even if you change the value of the element of @ num1, the element of @ nums2 does not change.
+What will happen now? The array itself is copied. Even if you change the value of the element of @num1, the element of @nums2 does not change.
 
-It is a Perl language specification that a copy is made when an <b> array is assigned. </ b>
+It is a Perl language specification that a copy is made when an <b> array is assigned. </b>
 
-<h3> Hash copy </ h3>
+<h3> Hash copy </h3>
 
 Let's copy the hash.
 
 <pre>
-my% person1 = (age => 12, name =>'kimoto');
+my%person1 = (age => 12, name =>'kimoto');
 
 # Hash copy
-my% person2 =% person1;
-</ pre>
+my%person2 =%person1;
+</pre>
 
-What will happen now? The hash itself is copied. Even if you change the value of the element of% person1, the element of% person2 does not change.
+What will happen now? The hash itself is copied. Even if you change the value of the element of%person1, the element of%person2 does not change.
 
-<b> It is Perl's language specification that a copy is made when a hash is assigned. </ b>
+<b> It is Perl's language specification that a copy is made when a hash is assigned. </b>
 
-<h4> The default behavior for Perl assignments is all copy </ h4>
+<h4> The default behavior for Perl assignments is all copy </h4>
 
 The default behavior for Perl assignments is all copy.
 
-This means that you can copy the basic data structure using only the language specification features, without using the <b> copy function. </ b>
+This means that you can copy the basic data structure using only the language specification features, without using the <b> copy function. </b>
 
 Copying values ​​is a very common feature. Perl is a language specification that allows you to copy values.
 
@@ -121,51 +121,51 @@ Perl's default
 
 First, keep in mind that Perl makes a clear distinction between values ​​and references.
 
-The <b> value is a copy of the value itself, and in the reference, the address is copied. </ b>
+The <b> value is a copy of the value itself, and in the reference, the address is copied. </b>
 
-<h3> Perl has a data structure called a reference </ h3>
+<h3> Perl has a data structure called a reference </h3>
 
 Perl can make references just like pointers in C. For reference, it is better to have the image of an arrow.
 
 <pre>
 # Numerical reference
-my $ num = 1;
-my $ num_ref = \ $ num;
+my $num = 1;
+my $num_ref = \ $num;
 
 # String reference
-my $ name ='kimoto';
-my $ name_ref = \ $ name;
+my $name ='kimoto';
+my $name_ref = \ $name;
 
 # Array reference
 my @nums = (1, 2, 3);
-my $ nums_ref = \ @nums;
+my $nums_ref = \ @nums;
 
 # Hash reference
-my% person = (age => 1, name =>'kimoto');
-my $ person_ref = \% person;
-</ pre>
+my%person = (age => 1, name =>'kimoto');
+my $person_ref = \%person;
+</pre>
 
 A reference is actually an address value, and it's just a number, so variables start with a "$", just like storing a number.
 
 <table>
-  <tr> <td> Numbers and strings </ td> <td> $ num, $ name </ td> <td> References to numbers and strings </ td> <td> $ num_ref, $ name_ref </ td > </ tr>
-  <tr> <td> Array </ td> <td> @nums </ td> <td> Array Reference </ td> <td> $ nums_ref </ td> </ tr>
-  <tr> <td> hash </ td> <td>% person </ td> <td> hash reference </ td> <td> $ person_ref </ td> </ tr>
-</ table>
+  <tr> <td> Numbers and strings </td> <td> $num, $name </td> <td> References to numbers and strings </td> <td> $num_ref, $name_ref </td > </tr>
+  <tr> <td> Array </td> <td> @nums </td> <td> Array Reference </td> <td> $nums_ref </td> </tr>
+  <tr> <td> hash </td> <td>%person </td> <td> hash reference </td> <td> $person_ref </td> </tr>
+</table>
 
 The reference holds the address of the data, so if you copy the reference, it only copies the address value, not the value itself.
 
 <pre>
 # Array reference
-my @ nums1 = (1, 2, 3);
-my $ nums_ref1 = \ @nums;
+my @nums1 = (1, 2, 3);
+my $nums_ref1 = \ @nums;
 
-my $ nums_ref2 = $ nums_ref1;
-</ pre>
+my $nums_ref2 = $nums_ref1;
+</pre>
 
-If you change the element of @ nums1, the array pointed to by $ nums_ref2 is the same array, so it looks like it has changed.
+If you change the element of @nums1, the array pointed to by $nums_ref2 is the same array, so it looks like it has changed.
 
-<h3> Syntack sugar for making array references and hash references directly </ h3>
+<h3> Syntack sugar for making array references and hash references directly </h3>
 
 To read the Perl source code, keep in mind that there is a syntax sugar to make array references and hash references directly.
 
@@ -173,26 +173,26 @@ To read the Perl source code, keep in mind that there is a syntax sugar to make 
 
 # Array reference
 my @nums = (1, 2, 3);
-my $ nums_ref = \ @nums;
+my $nums_ref = \ @nums;
 
 # The above can be written as follows
-my $ nums_ref = [1, 2, 3];
+my $nums_ref = [1, 2, 3];
 
 # Hash reference
-my% person = (age => 1, name =>'kimoto');
-my $ person_ref = \% person;
+my%person = (age => 1, name =>'kimoto');
+my $person_ref = \%person;
 
 # The above can be written as follows
-my $ perlson_ref = {age => 1, name =>'kimoto'};
-</ pre>
+my $perlson_ref = {age => 1, name =>'kimoto'};
+</pre>
 
-<h3> The advantage of language is that you can distinguish between values ​​and references </ h3>
+<h3> The advantage of language is that you can distinguish between values ​​and references </h3>
 
 Perl is misunderstood because Perl's clear distinction between values ​​and references has been criticized simply as confusing.
 
 It's been done to overstate the bad things about Perl, but the distinction between values ​​and references has a clear advantage.
 
-<h4> Strings are copied by default, so it's safe </ h4>
+<h4> Strings are copied by default, so it's safe </h4>
 
 The fact that the string is copied with the default behavior means that it will not be rewritten at the destination passed by the function.
 
@@ -200,7 +200,7 @@ Since the string is copied, it does not happen that the string is rewritten and 
 
 You will realize this gratitude as your project grows.
 
-<h4> Perl strings can be rewritten </ h4>
+<h4> Perl strings can be rewritten </h4>
 
 Perl strings can be rewritten by default.
 
@@ -208,7 +208,7 @@ When a replacement is performed with a regular expression, etc., a new character
 
 This is a huge benefit to string processing performance. Perl is also designed with the language itself to optimize string processing performance.
 
-<h4> No need to write copy function </ h4>
+<h4> No need to write copy function </h4>
 
 Copying strings is a very common feature, but you don't have to write a copy function like strcopy in your program.
 
@@ -216,7 +216,7 @@ You may need to copy the array from time to time, but you can copy it without wr
 
 This means that Perl programs can be written very short and smart.
 
-<h4> Understand the basics of software </ h4>
+<h4> Understand the basics of software </h4>
 
 In the world below C, for example, in assembler and machine language, the data in memory is composed of one dimension.
 

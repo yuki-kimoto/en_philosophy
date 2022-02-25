@@ -1,4 +1,4 @@
-<h2> Data Marketing Concept --Data :: Marketing </ h2>
+<h2> Data Marketing Concept --Data::Marketing </h2>
 
 The Perl seminar is envisioning creating a module for data marketing that can be done in Perl.
 
@@ -6,7 +6,7 @@ If you hit one command on the command line, the result of data marketing will be
 
 If you use a batch program of date and time such as cron, daily information will be output as HTML and png files, and will be visualized and reported.
 
-<h3> Data marketing module requires basic technology </ h3>
+<h3> Data marketing module requires basic technology </h3>
 
 When you want to make a module in a certain field, you need the basic technology to compose it.
 
@@ -16,7 +16,7 @@ If not, the basic technology must be developed before that.
 
 And in 2019, the basic technology that can realize everything is in the field of Perl.
 
-<h3> How to read the input data </ ​​h3>
+<h3> How to read the input data </​​h3>
 
 There are several possible formats for entering data. CSV, TSV, Excel data, or your own format.
 
@@ -24,17 +24,17 @@ There is a wide variety of user input.
 
 Therefore, in addition to analyzing by yourself, it is convenient to be able to add the required format in the plug-in format.
 
-It seems that you can handle it by using CPAN modules such as Text :: CSV and Spreadsheet :: ParseExcel.
+It seems that you can handle it by using CPAN modules such as Text::CSV and Spreadsheet::ParseExcel.
 
-<h3> How to output </ h3>
+<h3> How to output </h3>
 
 There are several possible formats for outputting the data. Considering that the final output is a report with a summary of the data and graphs, HTML, Excel and PDF are influential.
 
 Again, in addition to creating your own output, it would be nice to be able to add the required format in a plug-in format.
 
-If it is HTML, you can use Mojolicious, if it is Excel, you can use Excel :: Writer :: XLSX, and if it is PDF, you can use PDF :: API2.
+If it is HTML, you can use Mojolicious, if it is Excel, you can use Excel::Writer::XLSX, and if it is PDF, you can use PDF::API2.
 
-<h3> How to represent the data </ ​​h3>
+<h3> How to represent the data </​​h3>
 
 One problem with Perl is that it doesn't have a contiguous array of data. In order to perform 32-bit integer type, 64-bit integer type, 32-bit floating-point type, and 64-bit floating-point type operations at high speed, it is necessary to use a mechanism called XS, but the problem with XS is that the user cannot process the data. about it.
 
@@ -44,7 +44,7 @@ I have been developing the foundation for the last three years. It's a module ca
 
 Time series data of date is a continuous value of 64bit integer, character string is a continuous value of a character string, statistical data is 64bit floating point, training data is 32bit floating point and GPU processing is possible, etc. Adding the array data structure to Perl is essential for this.
 
-In Data :: Marketing, column data is represented as a dynamic contiguous array. Use SPVM's SPVM :: IntList, SPVM :: LongList, SPVM :: DoubleList, SPVM :: FloatList, and SPVM :: StringList.
+In Data::Marketing, column data is represented as a dynamic contiguous array. Use SPVM's SPVM::IntList, SPVM::LongList, SPVM::DoubleList, SPVM::FloatList, and SPVM::StringList.
 
 Calculations for columns and operations for finding relationships between columns are fast because they can be performed using continuous arrays.
 
@@ -54,17 +54,17 @@ In data marketing, there is information that the acquired data could not be acqu
 
 In data marketing, it is not essential, but it is flexible to have dimensional data for one column. When the data structure provided by data marketing needs to be extended to other areas, it can be handled. This is because if matrix calculation is required to know the tendency and the relationship of data, it can be handled if it can be treated as two-dimensional.
 
-<h3> Operation on data </ ​​h3>
+<h3> Operation on data </​​h3>
 
 Manipulating data is easy if you imagine Excel. Excel is actually already a simple data marketing tool. However, when the number of data exceeds the level of tens of thousands, there are limits in terms of performance and memory efficiency. Also, if the first data is in the database, you will have to manually drop it into Excel.
 
-Data :: Marketing aims to be a natural extension of Excel operations. Data sorting, regression analysis, pivot tables, bar charts, line charts, statistical tools and more.
+Data::Marketing aims to be a natural extension of Excel operations. Data sorting, regression analysis, pivot tables, bar charts, line charts, statistical tools and more.
 
 Excel is the most used UI as a data marketing tool.
 
-Data :: Marketing extends Excel's data marketing operations to add the good features of Perl, such as efficiency, modularization, and automation.
+Data::Marketing extends Excel's data marketing operations to add the good features of Perl, such as efficiency, modularization, and automation.
 
-<h3> Data Visualization-Graph Report </ h3>
+<h3> Data Visualization-Graph Report </h3>
 
 Regarding data visualization, I was repeating small experiments. How to draw a graph, write characters, put an image in the graph, and finally output as png with a small dependency with Perl.
 
@@ -74,7 +74,7 @@ Imager can be used as a basic technology for two-dimensional drawing to generate
 
 What about 3D drawing? Let's set it aside. First of all, what you can do.
 
-<h3> Perl also needs expectations for the future </ h3>
+<h3> Perl also needs expectations for the future </h3>
 
 I think Perl also needs expectations for the future. People are happy to grow. Even in Perl, we need quantitative growth, and if that is not possible, qualitative growth.
 

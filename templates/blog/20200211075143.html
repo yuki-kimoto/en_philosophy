@@ -1,54 +1,54 @@
-<h2> Perl has regular expressions built into the language </ h2>
+<h2> Perl has regular expressions built into the language </h2>
 
 Perl has regular expressions built into the programming language. Therefore, it is possible to write the character string processing that appears frequently in a short and high speed.
 
-<h3> Regular expression syntax in pattern matching </ h3>
+<h3> Regular expression syntax in pattern matching </h3>
 
 In string processing, you often want to see if the characters in this pattern are included in the string. With Perl, regular expressions are built into the language, so you can write regular expressions using pattern matching syntax.
 
 <pre>
 #Regular expression pattern matching syntax
-if ($ str = ~ / regular expression /) {
+if ($str = ~ / regular expression /) {
 
 }
-</ pre>
+</pre>
 
-<h3> Repeated pattern matching </ h3>
+<h3> Repeated pattern matching </h3>
 
 Since regular expressions are built into the language, parsing also parses the regular expression syntax. There is a syntax that makes it easy to write pattern matching iterations.
 
 <pre>
-while ($ str = ~ / (regular expression) / g) {
-  my $ match = $ 1;
+while ($str = ~ / (regular expression) / g) {
+  my $match = $1;
 }
-</ pre>
+</pre>
 
 You can easily write repetitive pattern matching by combining the while statement with the g option of the regular expression. As an internal implementation, there is a variable that saves the start position of the character string at the timing of repetition.
 
-<h3> Regular expression syntax for permutations </ h3>
+<h3> Regular expression syntax for permutations </h3>
 
-Perl has a regular expression syntax for substitutions. Perl has adopted the syntax <a href="/blog/20190924071341.html"> sed </a>. You can replace strings with a short syntax, just like using the <a href="https://en.linux.perlzemi.com/blog/20200211081227.html"> Linux command </a> sed. increase.
+Perl has a regular expression syntax for substitutions. Perl has adopted the syntax <a href="/blog/20190924071341.html"> sed</a>. You can replace strings with a short syntax, just like using the <a href="https://en.linux.perlzemi.com/blog/20200211081227.html"> Linux command</a> sed. increase.
 
 <pre>
 #Regular expression replacement syntax
-$ str = ~ s / regular expression / replaced string /;
-</ pre>
+$str = ~ s / regular expression / replaced string /;
+</pre>
 
-<h3> Can you handle Japanese correctly with regular expressions? </ H3>
+<h3> Can you handle Japanese correctly with regular expressions? </H3>
 
 Yes, you can handle Japanese correctly with regular expressions. To handle Japanese correctly, please refer to the following articles.
 
-<a href="/blog/20091118124667.html"> Encode module-Properly handle multibyte strings such as Japanese </a>
+<a href="/blog/20091118124667.html"> Encode module-Properly handle multibyte strings such as Japanese</a>
 
 By converting to a decoded character string, Japanese can be handled correctly with regular expressions.
 
-<h3> Are there any other programming languages ​​that have regular expressions built in? </ H3>
+<h3> Are there any other programming languages ​​that have regular expressions built in? </H3>
 
 In addition to Perl, Ruby is another programming language that incorporates regular expressions. Ruby uses Perl's regular expression grammar.
 
 <pre>
 # Ruby pattern matching syntax
 String = ~ / regular expression /
-</ pre>
+</pre>
 
 Many languages ​​provide regular expressions as libraries.

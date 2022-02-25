@@ -1,18 +1,18 @@
-<h2> Perl can use a single scope in the same way as C language </ h2>
+<h2> Perl can use a single scope in the same way as C language </h2>
 
 Perl has a single scope that can be used in the same way as C. A single scope is not a scope that exists in combination with an if statement, for statement, or while statement, but a scope that can be defined independently and that can give a scope to a variable.
 
-<h3> Perl's sole scope </ h3>
+<h3> Perl's sole scope </h3>
 
 Perl's sole scope.
 
 <pre>
 {
-  my $ foo = 1;
+  my $foo = 1;
 }
-</ pre>
+</pre>
 
-<h3> C language independent scope </ h3>
+<h3> C language independent scope </h3>
 
 It is the sole scope of C language.
 
@@ -20,33 +20,33 @@ It is the sole scope of C language.
 {
   int32_t foo = 1;
 }
-</ pre>
+</pre>
 
-<h3> Comparison of Perl's single scope and C's single scope </ h3>
+<h3> Comparison of Perl's single scope and C's single scope </h3>
 
 Let's compare Perl's single scope with C's single scope. You can create a scope with the symbol "{}".
 
-<h3> How to use a single scope </ h3>
+<h3> How to use a single scope </h3>
 
 A single scope can declare valid variables only within that scope, so it is convenient to write as follows. It can also be nested.
 
 <pre>
 {
-  my $ foo = 5;
+  my $foo = 5;
   
   {
-    my $ foo = 1;
+    my $foo = 1;
   }
   
   {
-    my $ foo = 2;
+    my $foo = 2;
   }
   
   {
-    my $ foo = 3;
+    my $foo = 3;
   }
 }
-</ pre>
+</pre>
 
 In Perl, it's a reference-counted GC, so it also has the effect of freeing variables at the end of scope.
 
@@ -55,77 +55,77 @@ A single scope is very effective when writing exams. This is because the exam is
 <pre>
 #Test 1
 {
-  my $ baz = "abc";
+  my $baz = "abc";
   
   #Test 1 --Subtest 1
   {
-    my $ foo = 1;
+    my $foo = 1;
     
     #Gonyo
     
-    is ($ foo, 5);
+    is ($foo, 5);
   }
 
   #Test 1 --Subtest 2
   {
-    my $ foo = 3;
+    my $foo = 3;
     
     #Gonyo
     
-    is ($ foo, 10);
+    is ($foo, 10);
   }
 
   #Test 1 --Subtest 3
   {
-    my $ foo = 10;
+    my $foo = 10;
     
     #Gonyo
     
-    is ($ foo, -5);
+    is ($foo, -5);
   }
 }
 
 #Test 2
 {
-  my $ baz = "def";
+  my $baz = "def";
 
   #Test 2 --Subtest 1
   {
-    my $ bar = 2;
+    my $bar = 2;
     
     #Gonyo
     
-    is ($ bar, 3);
+    is ($bar, 3);
   }
 
   #Test 2 --Subtest 2
   {
-    my $ bar = 3;
+    my $bar = 3;
     
     #Gonyo
     
-    is ($ bar, 45);
+    is ($bar, 45);
   }
 
   #Test 2 --Subtest 3
   {
-    my $ bar = 20;
+    my $bar = 20;
     
     #Gonyo
     
-    is ($ bar, -19);
+    is ($bar, -19);
   }
 }
-</ pre>
+</pre>
 
-<h3> Other similarities between Perl and C </ h3>
+<h3> Other similarities between Perl and C </h3>
 
 In this article, I wrote that Perl's single scope is similar to C, but it also includes Perl's if statements, for statements, while statements, increments / decrements, operator priorities, scopes, and reference concepts. , Similar to the C language grammar.
 
 <ul>
-  <li> <a href="/blog/20190926072429.html"> Perl if statements are similar to C if statements </a> </ li>
-  <li> <a href="/blog/20191001073128.html"> Perl while statement has the same grammar as C language while statement </a> </ li>
-  <li> <a href="/blog/20190920082045.html"> Perl increments / decrements work the same as in C </a> </ li>
-  <li> <a href="/blog/20191001075312.html"> Perl operators and C operators are similar in type and have the same priority </a> </ li>
-  <li> <a href="/blog/20191002075550.html"> Perl reference functionality is the same as C pointer functionality </a> </ li>
-</ ul>
+  <li> <a href="/blog/20190926072429.html"> Perl if statements are similar to C if statements</a> </li>
+  <li> <a href="/blog/20191001073128.html"> Perl while statement has the same grammar as C language while statement</a> </li>
+  <li> <a href="/blog/20190920082045.html"> Perl increments / decrements work the same as in C</a> </li>
+  <li> <a href="/blog/20191001075312.html"> Perl operators and C operators are similar in type and have the same priority</a> </li>
+  <li> <a href="/blog/20191002075550.html"> Perl reference functionality is the same as C pointer functionality</a> </li>
+</ul>

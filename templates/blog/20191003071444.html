@@ -1,18 +1,18 @@
-<h2> Perl's grep is inspired by the Unix / Linux command grep </ h2>
+<h2> Perl's grep is inspired by the Unix / Linux command grep </h2>
 
 Perl has a function called grep, which is inspired by Perl's grep from the Unix / Linux command grep.
 
-<h4> Unix / Linux command grep </ h4>
+<h4> Unix / Linux command grep </h4>
 
 The basic function of grep in Unix / Linux commands is to search for a string in a file and retrieve and display the corresponding line, if any.
 
 <pre>
 grep cake food.txt
-</ pre>
+</pre>
 
 If there is a line in footd.txt that contains the cake, it will be displayed.
 
-<h4> Perl's grep function </ h4>
+<h4> Perl's grep function </h4>
 
 Perl's grep function is inspired by the Unix / Linux command grep.
 
@@ -25,14 +25,14 @@ Let's write a sample of the grep function. This is a sample to extract only even
 <pre>
 # Extract only even numbers with grep function
 my @nums = (1, 2, 3, 4);
-my @even_nums = grep {$ _% 2 == 0} @nums;
-</ pre>
+my @even_nums = grep {$_%2 == 0} @nums;
+</pre>
 
-Each element of the array comes in the default variable "$ _". And only those that match the even condition will return the new fetched array.
+Each element of the array comes in the default variable "$_". And only those that match the even condition will return the new fetched array.
 
 Perl's grep function is very similar to Unix / Linux's grep command.
 
-<h3> Perl regular expressions can also be used with the grep command </ h3>
+<h3> Perl regular expressions can also be used with the grep command </h3>
 
 Perl regular expressions are practical regular expressions that implement features that make it easy to solve common problems.
 
@@ -40,6 +40,6 @@ Although experimental, in modern Linux you can also use Perl regular expressions
 
 <pre>
 grep -P'(\ .txt | \ .html) $'food.txt
-</ pre>
+</pre>
 
 Perl's regular expressions, which have become popular and widely used in Perl, can also be used on the grep command side.
